@@ -1,9 +1,9 @@
-# Welcome
+# Introduction
 
-This is a book that contains the code I am currently developing for a project under Manuel Barron's supervision. The project studies the impact of homophily on academic outcomes.
+This book showcases the code I am developing for a research project under the supervision of Professor Manuel Barrón. The project investigates the impact of homophily on academic outcomes.
 
 ```{note}
-The code shown here is only from publicly available data
+The code presented here is derived exclusively from publicly available data.
 ```
 
 ```{tableofcontents}
