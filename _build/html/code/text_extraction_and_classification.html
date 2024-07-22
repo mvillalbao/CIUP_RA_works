@@ -1,0 +1,4437 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Syllabi Analysis and NLP for potential course selection &#8212; UP Networks Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code/text_extraction_and_classification';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="UP Networks Project - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="UP Networks Project - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Syllabi Analysis and NLP for potential course selection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcode/text_extraction_and_classification.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/code/text_extraction_and_classification.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Syllabi Analysis and NLP for potential course selection</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">1.1. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabi-text-analysis">1.2. Syllabi text Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-extraction">1.2.1. Text Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristic-identification">1.2.2. Key characteristic identification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulated-pdf-course-data-extraction">1.3. Tabulated PDF course data extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidating-final-dataframe">1.4. Consolidating final Dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-aditional-information">1.4.1. Merging aditional information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-potential-courses">1.4.2. Filtering potential courses</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="syllabi-analysis-and-nlp-for-potential-course-selection">
+<h1><span class="section-number">1. </span>Syllabi Analysis and NLP for potential course selection<a class="headerlink" href="#syllabi-analysis-and-nlp-for-potential-course-selection" title="Link to this heading">#</a></h1>
+<p>This notebook constructs a dataframe containing information about potential courses of interest. It begins by extracting text from a large database of syllabi and identifying relevant characteristics using regular expressions. Then, it extracts additional course data from a complex tabulated PDF and enriches the main dataframe by matching course codes.</p>
+<p>The resulting dataframe was instrumental in selecting the course for the randomized control trial, as it facilitated the visualization of crucial course characteristics, such as potential observations, references to group projects in the syllabus, faculty details, and more.</p>
+<section id="setup">
+<h2><span class="section-number">1.1. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">fitz</span>  <span class="c1"># PyMuPDF</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\UP_networks\\code&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;../&quot;</span><span class="p">)</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">root</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\data&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="syllabi-text-analysis">
+<h2><span class="section-number">1.2. </span>Syllabi text Analysis<a class="headerlink" href="#syllabi-text-analysis" title="Link to this heading">#</a></h2>
+<section id="text-extraction">
+<h3><span class="section-number">1.2.1. </span>Text Extraction<a class="headerlink" href="#text-extraction" title="Link to this heading">#</a></h3>
+<p>We define functions to programatically extract the text of all of our syllabus pdf files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_text_from_pdf</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extracts text from a PDF file.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    pdf_path (str): The path to the PDF file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    str: The extracted text from the PDF.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Open the PDF file</span>
+    <span class="n">pdf_document</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
+    
+    <span class="c1"># Initialize an empty string to hold the text</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="c1"># Iterate through each page</span>
+    <span class="k">for</span> <span class="n">page_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pdf_document</span><span class="o">.</span><span class="n">page_count</span><span class="p">):</span>
+        <span class="c1"># Get the page</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="n">pdf_document</span><span class="p">[</span><span class="n">page_num</span><span class="p">]</span>
+        <span class="c1"># Extract text from the page</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+
+    <span class="c1"># Close the PDF file</span>
+    <span class="n">pdf_document</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extract_text_from_pdf</span><span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\syllabus\1_Administración\(1) 142085 - Gestión de la Sostenibilidad Social y Ambiental en las Empresas (2023-I).pdf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Sílabo\n142085 - Gestión de la Sostenibilidad Social y Ambiental en las Empresas\nI.\nInformación general\nNombre del Curso: Gestión de la Sostenibilidad Social y Ambiental en las Empresas\nCódigo del curso: 142085\nDepartamento Académico: Administración\nCréditos: 4\nHoras Teoría: 4\nHoras Práctica: 0\nPeriodo Académico: 2023-01-PRE\nSección: A\nModalidad: Presencial\nIdioma: Español\nDocente: SILVANA CARO VARGAS\nEmail docente: s.carov@up.edu.pe\nII.\nIntroducción\nEl curso promueve en los alumnos una actitud proactiva hacia la sostenibilidad social y ambiental de las\nempresas, que ha de evidenciarse en el ejercicio de los diversos roles que asumirán a lo largo de su\ntrayectoria profesional. A través del desarrollo del curso los alumnos conocerán, desde una perspectiva\nestratégica,  los  procesos  e  instrumentos  relacionados  con  la  gestión  sostenible  y  socialmente\nresponsable. Además, se espera aportar a la formación de un profesional técnicamente competente y\nsocialmente comprometido capaz de elaborar propuestas organizacionales que contribuyan al desarrollo\nsostenible y a la creación de valor económico y social.\nIII.\nLogro de aprendizaje final del curso\nAl concluir el curso, el estudiante presentará, en un informe escrito, que luego será sustentado, una\niniciativa de sostenibilidad social y ambiental para una organización existente. La iniciativa debe estar\nalineada con la estrategia de la organización, haberse generado considerando tanto el método como los\nconceptos teóricos trabajados en el curso, contemplar los resultados del diagnóstico de la gestión\nsostenible de la organización y, equilibrar la generación de valor económico, social y ambiental, de forma\nque fortalezca la posición competitiva de la organización y beneficie al menos a uno de sus grupos de\ninterés. En la sustentación oral de la propuesta, el estudiante debe responder preguntas sobre el informe\npresentado y sobre los contenidos trabajados a lo largo del curso.\nIV.\nUnidades de aprendizaje\nUNIDAD DE APRENDIZAJE 1: El contexto y el marco conceptual\nLogro de Aprendizaje / propósito de la unidad:\nFinalizada la primera unidad, el estudiante presentará una ficha resumen con información básica acerca\nde la organización seleccionada, sus procesos y su estrategia, así como un informe escrito breve en el \nque dé cuenta de los oportunidades y riesgos, relacionados con la sostenibilidad, en el sector en el que \nopera la organización.\nContenidos:\n142085 A 2023-01-PRE\nPág. 1 de 13\n1.1 Contexto de la sostenibilidad \n1.2 Mirada crítica al modelo de desarrollo \n1.3 Compromisos globales promotores del desarrollo sostenible\nUNIDAD DE APRENDIZAJE 2: Ámbitos de la sostenibilidad social y ambiental\nLogro de Aprendizaje / propósito de la unidad:\nAl terminar la segunda unidad, el estudiante presentará un informe escrito en el que identifique, \ndescriba, interprete y analice sistemática, fundamentada y objetivamente el enfoque de la gestión de la \nsostenibilidad social y ambiental en la organización  . Deberá determinar el tipo de iniciativas de \nsostenibilidad que desarrolla la organización, el aporte y alineamiento de las mismas a su estrategia \ncompetitiva y a la generación de valor social y ambiental; los recursos disponibles para el desarrollo de \niniciativas de sostenibilidad y; el compromiso formal y percibido asumido por la organización con la \nsostenibilidad. A partir de ello deberá determinar las fortalezas y debilidades de la empresa en relación \ncon la gestión  sostenible y socialmente responsable.\nContenidos:\n2.1 Marcos y estándares de sostenibilidad \n2.2 Gobierno corporativo\n2.3 Cuestiones ambientales \n2.4 Interacción con la comunidad\n2.5 Asuntos de consumidores y clientes\n2.6 Condiciones de trabajo y prácticas laborales\nUNIDAD DE APRENDIZAJE 3: Perspectiva estratégica y gestión de la sostenibilidad en las \norganizaciones\nLogro de Aprendizaje / propósito de la unidad:\nAl terminar la tercera unidad el estudiante presentará, en un informe escrito, que luego será sustentado, \nuna iniciativa de sostenibilidad social y ambiental para una organización existente. La iniciativa debe \nestar alineada con la estrategia de la organización, haberse generado considerando tanto el método \ncomo los conceptos teóricos trabajados en el curso, contemplar los resultados del diagnóstico de la \ngestión sostenible de la organización y, equilibrar la generación de valor económico, social y ambiental, \nde forma que fortalezca la posición competitiva de la organización y beneficie al menos a uno de sus \ngrupos de interés. En la sustentación oral de la propuesta, el estudiante debe responder preguntas \nsobre el informe presentado y sobre los contenidos trabajados a lo largo del curso.  \nContenidos:\n3.1 Perspectiva estratégica en la gestión de la sostenibilidad de las organizaciones \n3.2 Elementos de gestión y su relación com la sostenibilidad social y ambiental \n3.3 Diseño de iniciativas de sostenibilidad \n3.4 Selección de iniciativas \nV.\nEstrategias Didácticas\nLa asignatura ha sido pensada con un enfoque eminentemente participativo y aplicativo que incluye el \nestudio de casos, el trabajo colaborativo y el acercamiento a la realidad de la gestión de la sostenibilidad \nsocial y ambiental en las organizaciones peruanas\n142085 A 2023-01-PRE\nPág. 2 de 13\nA la dinámica práctica mencionada seguirá el desarrollo teórico, a través de la exposición dialogante del \ndocente, la presentación de videos y eventualmente la participación de expositores invitados.\nEl desarrollo teórico deberá ser acompañado por preguntas y opiniones del alumno generadas en un \ncontexto propicio al diálogo y la discusión constructiva.\nLa participación esperada del estudiante se concretará además en las siguientes acciones: lectura del \nmaterial bibliográfico (la lectura debe ser previa a la sesión de clase correspondiente) ; participación en \nlas sesiones de clase ; exposiciones grupales ; estudio de casos ; trabajos y/o discusiones en equipo \nfuera y dentro de clase ; entrevistas fuera de clase a personal de empresas que implementan acciones de\nsostenibilidad.\nVI.\nSistemas de evaluación\nNombre evaluación\n%\nFecha\nCriterios\nComentarios\n1.\nControles\n30\n Asertividad \n \n Manejo conceptual. \n \n2.\nCasos\n10\n Capacidad  analítica  y\nsintética.\n Capacidad  propositiva\ncon\n \nenfoque\nmultidisciplinario\n \ny\nholístico\n3.\nDinámicas\n10\n Capacidad  analítica  y\nsintética.\n Capacidad  propositiva\ncon\n \nenfoque\nmultidisciplinario\n \ny\nholístico.\n \n4.\nTrabajo final (primera \nentrega)\n10\n Aplicación de la teoría a\nla práctica.\n Capacidad  analítica  y\nsintética\n Capacidad crítica\n Habilidad  comunicativa\n(escrita)\n5.\nTrabajo final (segunda \nentrega)\n40\n Aplicación de la teoría a\nla práctica.\n Habilidad  comunicativa\n(oral y escrita).\n Capacidad propositiva.\n \nCapacidad  para  el\ntrabajo en equipo.\n142085 A 2023-01-PRE\nPág. 3 de 13\nVII.\nCronograma referencial de actividades\nUnidades de aprendizaje \nContenidos y actividades a realizar\nRecursos y materiales\nEvaluaciones\nSemana 1: del 20/03/2023 al 25/03/2023\n\uf0b7UNIDAD DE APRENDIZAJE 1: El \ncontexto y el marco conceptual \nUnidad  1:   El  contexto  y  el  marco\nconceptual:\n \nContexto\n \nde\n \nla\nsostenibilidad \n \n Revisión de los contenidos del curso.\nNormas sobre el desarrollo del curso y\nde los trabajos.\n.  Reflexiones  sobre  el  desarrollo.\nEstado, empresa y sociedad Civil\n \n\uf0b7LO1:  Stiglitz y otros (2009). Medición\ndel desarrollo y progreso social\n\uf0b7LO 31: De la RSC a la sostenibilidad \ncorporativa\n\uf0b7LO 32: Sostenibilidad y RSC\nSemana 2: del 27/03/2023 al 01/04/2023\n\uf0b7UNIDAD DE APRENDIZAJE 1: El \ncontexto y el marco conceptual \nUnidad  1:   El  contexto  y  el  marco\nconceptual: Mirada crítica al modelo de\ndesarrollo \n \n \nReflexiones  sobre  el  desarrollo.\nEstado, empresa y sociedad civil\nUnidad  1:   El  contexto  y  el  marco\nconceptual:  Compromisos  globales\npromotores del desarrollo sostenible\n \n \n \n\uf0b7LO1:  Stiglitz y otros (2009). Medición\ndel desarrollo y progreso social\n\uf0b7LO 31: De la RSC a la sostenibilidad \ncorporativa\n\uf0b7LO 32: Sostenibilidad y RSC\n\uf0b7LO2: OIT (2001). Declaración \nTripartita.\n\uf0b7LO3: ONU (2015). CM Cambio \nclimático\n\uf0b7LO4: PNUMA (2015) Hacia una \neconomía verde\n\uf0b7LO5: EU (2020). A new Circular \nEconomy Action Plan\n\uf0b7Dinámicas\n142085 A 2023-01-PRE\nPág. 4 de 13\nUnidades de aprendizaje \nContenidos y actividades a realizar\nRecursos y materiales\nEvaluaciones\nSemana 3 con feriados el jueves 06, viernes 07 y sábado 08: del 03/04/2023 al 08/04/2023\n\uf0b7UNIDAD DE APRENDIZAJE 1: El \ncontexto y el marco conceptual \nUnidad  1:    El  contexto  y  el  marco\nconceptual:   Compromisos  globales\npromotores del desarrollo sostenible\n \nDinámica 1:  Compromisos globales\n \n\uf0b7LO6: ONU (2015). Agenda 2030\n\uf0b7LO7: UNCTAD (2016). Directrices \npara la protección del consumidor.\n\uf0b7Dinámicas\nSemana 4: del 10/04/2023 al 15/04/2023\n\uf0b7UNIDAD DE APRENDIZAJE 1: El \ncontexto y el marco conceptual \nUnidad  1:    El  contexto  y  el  marco\nconceptual:   Responsabilidad  social\nempresarial y sostenibilidad\n \nDinámica  2:    Reflexión  sobre  el\nsistema eco y el rol de la empresa .\nConcepto de RS\n \n \n\uf0b7LO8:  Friedman, M. (1970). The \nSocial Responsibility of Business. The\nNYT\n\uf0b7LO9:  Handy (2002), Para qué son los\nnegocios\n\uf0b7LO10: Jones (2013).  Debating the \nresponsibility of capitalism in \nhistorical\n\uf0b7LO11: Harari (2013) El credo \ncapitalista\n\uf0b7Dinámicas\nSemana 5: del 17/04/2023 al 22/04/2023\n\uf0b7UNIDAD DE APRENDIZAJE 1: El \ncontexto y el marco conceptual \n\uf0b7UNIDAD DE APRENDIZAJE 2: \nÁmbitos de la sostenibilidad social y \nambiental \nUnidad  1:    El  contexto  y  el  marco\nconceptual  :   Responsabilidad  social\nempresarial y sostenibilidad\n \nUnidad 2: Ámbitos de la sostenibilidad\nsocial  y  ambiental:  Marcos  y\nestándares  de  sostenibilidad  -\nGobierno corporativo\n \nExposición y debate en clase\n \nControl 1\n \n\uf0b7LO12: ISO 26000 (2010)\n\uf0b7LO13: GRI (2022). Grupo de \nestándares consolidados\n\uf0b7LO14: Indicadores Ethos Iarse (2019)\n\uf0b7LO15: WEF (2020). Measuring \nStakeholders Capitalism\n\uf0b7LO16: Perera (2011). Gob corporativo\n\uf0b7Controles\n\uf0b7Dinámicas\nSemana 6: del 24/04/2023 al 29/04/2023\n142085 A 2023-01-PRE\nPág. 5 de 13\nUnidades de aprendizaje \nContenidos y actividades a realizar\nRecursos y materiales\nEvaluaciones\n\uf0b7UNIDAD DE APRENDIZAJE 2: \nÁmbitos de la sostenibilidad social y \nambiental \nUnidad 2:  Ámbitos de la sostenibilidad\nsocial  y  ambiental  :  Condiciones  de\ntrabajo y prácticas laborales\n \n \nUnidad 2:   Ámbitos de la sostenibilidad\nsocial  y  ambiental:   Asuntos  de\nconsumidores y clientes\n \n \nDinámica  3:  Ámbitos  y  estándares  y\nmapeo de grupos de interés\n \n \n\uf0b7LO17: Peinado-Vara (2011). Grandes \ncompradores y cadena de valor\n\uf0b7LO18:  Guzmán (2016). Dimensión \ninterna de la RSE.\n\uf0b7LO19: Schwalb (2011). RS ante \nconsumidores.  Cap 4 en Vives y \nPeinado-Vara (2011)\n\uf0b7LO20: Cortina (2002). Por una ética \ndel consumo\n\uf0b7Dinámicas\nSemana 7: del 01/05/2023 al 06/05/2023\n\uf0b7UNIDAD DE APRENDIZAJE 2: \nÁmbitos de la sostenibilidad social y \nambiental \n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad 2:  Ámbitos de la RSE. Medio\nambiente  y  comunidad:  Cuestiones\nambientales  -  Interacción  con  la\ncomunidad\n \n \nUnidad  3:   Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:\n \nPerspectiva\nestratégica  en  la  gestión  de  la\nsostenibilidad de las organizaciones \n \n \nDinámica  3:  Ámbitos  y  estándares  y\nmapeo de grupos de interés\n \nControl 2\n \n\uf0b7LO21:  Lash y Wellington (2007).  \nCompetitive advantage on a warning \nplanet\n\uf0b7LO24:  Mitchell y otros (1997). Teoría \nde los stakeholders  (fundamento \npara caso Antamina)\n\uf0b7Controles\n\uf0b7Dinámicas\nSemana 8 de exámenes parciales: del 08/05/2023 al 13/05/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nUnidad 3:   Perspectiva estratégica y\n\uf0b7LO22:  Slaper y Hall (2011). The TBL\n\uf0b7Casos\n142085 A 2023-01-PRE\nPág. 6 de 13\nUnidades de aprendizaje \nContenidos y actividades a realizar\nRecursos y materiales\nEvaluaciones\nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \ngestión  de  la  sostenibilidad  en  las\norganizaciones:\n \n \nPerspectiva\nestratégica  en  la  gestión  de  la\nsostenibilidad de las organizaciones\n \nExposición y debate en clase\n \n \nCaso 1\n \n \n\uf0b7LO23: Vives y Peinado-Vara 2011.  \nRS como factor de competitividad\n\uf0b7LO24:  Mitchell y otros (1997). Teoría \nde los stakeholders\nSemana 9: del 15/05/2023 al 20/05/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad  3:  Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:\n \nPerspectiva\nestratégica  en  la  gestión  de  la\nsostenibilidad de las organizaciones\n \n \nExposición y debate en clase\n \n \nCaso 1\n \n \nENTREGA  DE  AVANCE  DEL\nTRABAJO FINAL - PARTE I\n \n\uf0b7LO22:  Slaper y Hall (2011). The TBL\n\uf0b7LO23: Vives y Peinado-Vara 2011.  \nRS como factor de competitividad\n\uf0b7LO24:  Mitchell y otros (1997). Teoría \nde los stakeholders\n\uf0b7Casos\n\uf0b7Trabajo final (primera \nentrega)\nSemana 10: del 22/05/2023 al 27/05/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad  3:   Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:\n \n \nPerspectiva\nestratégica  en  la  gestión  de  la\nsostenibilidad de las organizaciones\n \n\uf0b7Trabajo final (primera \nentrega)\n142085 A 2023-01-PRE\nPág. 7 de 13\nUnidades de aprendizaje \nContenidos y actividades a realizar\nRecursos y materiales\nEvaluaciones\nEvaluación  oral  sobre  la  primera\nentrega del trabajo final \n \nSemana 11: del 29/05/2023 al 03/06/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad 3:   Perspectiva estratégica y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:  Elementos de gestión\ny  su  relación  con  la  sostenibilidad\nsocial y ambiental \n \nCaso 2\n \n\uf0b7LO27:  Correa y Estevez (2011). \nCambio y diseño organizacional. Cap \n12 en Vives y Peinado-Vara (2011)\n\uf0b7Casos\nSemana 12: del 05/06/2023 al 10/06/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad  3:   Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:  Diseño  de  iniciativas\nde sostenibilidad \n \nDinámica  4  -  Parte  I:  Análisis  del\ncontexto competitivo\n \nDinámica  4   Parte  II:  Análisis  de  la\ncadena de valor\n \n \n\uf0b7LO28: Porter y Karmer (2006). \nVentaja competitiva y RSE\n\uf0b7LO29:  Porter y Karmer (2011). \nCreando valor compartido\n\uf0b7Dinámicas\nSemana 13: del 12/06/2023 al 17/06/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad  3:   Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:  Diseño de iniciativas\nde sostenibilidad \n \n \nUnidad  3:   Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\n\uf0b7LO30:  Epstein y Wisner (2011). \nBalance Scorecard for sustainability.\n\uf0b7Casos\n142085 A 2023-01-PRE\nPág. 8 de 13\nUnidades de aprendizaje \nContenidos y actividades a realizar\nRecursos y materiales\nEvaluaciones\norganizaciones:  \n Selección  de\niniciativas \n \n \nCaso 3\n \n \nSemana 14: del 19/06/2023 al 24/06/2023\n\uf0b7UNIDAD DE APRENDIZAJE 3: \nPerspectiva estratégica y gestión de \nla sostenibilidad en las \norganizaciones \nUnidad  3:   Perspectiva  estratégica  y\ngestión  de  la  sostenibilidad  en  las\norganizaciones:  \n Selección  de\niniciativas\n \nControl 3\n24/06  :  ENTREGA  DEL  TRABAJO\nFINAL\n \n\uf0b7LO13: GRI. Grupo de estándares \nconsolidados (2016)\n\uf0b7LO 15: WEF (2020). Métricas ESG\n\uf0b7LO 14: Indicadores ETHOS IARSE \n(2019)\n\uf0b7Controles\nSemana 15 con feriado jueves 29: del 26/06/2023 al 01/07/2023\n \nEXPOSICIÓN TRABAJO FINAL \n \n\uf0b7Trabajo final (segunda\nentrega)\nSemana 16 de exámenes finales: del 03/07/2023 al 08/07/2023\n142085 A 2023-01-PRE\nPág. 9 de 13\nVIII. Indicaciones para el desarrollo del curso\nNORMAS Y DE PROCEDIMIENTOS QUE APLICAN EN EL DESARROLLO DEL CURSO\nControles de lectura: \nEl esquema del control puede ser de opción múltiple, de desarrollo, de aplicación práctica o una\ncombinación de estos. El contenido a ser evaluado corresponderá a las lecturas obligatorias señaladas\nen el programa. Todos los controles de lectura se desarrollarán a través del Blackboard.\nParticipación en dinámicas:\nLa calificación que obtenga el alumno en las dinámicas será el promedio simple de las calificaciones\ngrupales obtenidas en todos los trabajos y ejercicios entregables de las dinámicas. Adicionalmente, se\npodrá considerar la participación individual o el aporte del alumno durante las dinámicas. El profesor\nasignará la nota de las dinámicas de acuerdo con las rúbricas establecidas para cada caso. Los\nalumnos que estén ausentes durante las dinámicas tendrán cero de calificación, aun cuando hayan\nparticipado en un trabajo previo o posterior preparado por su grupo. Cuando se programen foros, la\nparticipación se evaluará de forma individual. Los lineamientos específicos a seguir durante el foro se\nindicarán oportunamente y se colgarán en el BB.\nAsistencia y participación a lo largo del semestre: \nLa asistencia y participación del alumno a lo largo de todo el curso se tomará en cuenta en el\nredondeo de la nota final del curso que comprende todos los trabajos desarrollados en el semestre.\nEsta es una nota de ajuste que puede modificar la calificación final obtenida por el alumno en el curso\nen un rango que va de -1 a +1.\nCalificación de casos:\nVer documento explicativo colgado en el Blackboard\nTrabajo final\nVer documento explicativo colgado en el Blackboard\nRecuperación de evaluaciones: \nTodos los alumnos tendrán una sola oportunidad para suplir un control de lectura o un caso que, por\ncualquier motivo, no pudieron rendir (las dinámicas no se recuperan ni se reemplaza la calificación\nobtenida). También podrán rendir esta prueba sustitutoria los alumnos que, habiendo dado todas sus\npruebas, deseen mejorar la nota obtenida en una de ellas. Este control sustitutorio se tomará en la\nfecha indicada en el cronograma e incluirá todo lo visto en el curso desde el inicio. La calificación\nobtenida en este control suplirá la nota más baja obtenida por el alumno en los controles de lectura\nanteriores, aun cuando la nota obtenida en el control sustitutorio sea más baja que la calificación más\nbaja que haya obtenido previamente el alumno. Ningún componente del trabajo final es recuperable.\nRegistro de faltas y puntualidad:\n1.Una vez transcurridos los 15 primeros minutos de clase, el alumno no podrá ingresar al aula. \n2.En caso de que el alumno llegara a clase luego de tomada la lista de asistencia, pero antes de los 15\nminutos de tolerancia para el ingreso al aula, podrá ingresar, pero deberá acercarse al profesor al\nfinalizar la sesión de clase para que éste registre su tardanza.\n3.Si el alumno llegara al salón de clase una vez iniciada una prueba, pero dentro de los 15 primeros\nminutos de tolerancia, podrá rendir la prueba, pero dispondrá solo del tiempo remanente que quede\npara su término.\n4.Las  inasistencias  a  las  sesiones  de  clase  en  las  que  se  programe  un  expositor  invitado  se\ncomputarán como doble falta para el ajuste de la nota final del curso. \n5.Todos los alumnos rendirán los controles de lecturadurantela sesión de clase que corresponda\nydentro del aula, a menos que el profesor indique expresamente una modalidad distinta.\n142085 A 2023-01-PRE\nPág. 10 de 13\n6.Cuando hay un expositor invitado, la inasistencia se computa doble y el contenido de la exposición\nserá materia de evaluación en los controles de lectura que se indiquen.\nIX.\nReferencias bibliográficas\nObligatoria\n  LO02: Oficina Internacional del Trabajo - OIT (2001). Declaración tripartita de principios sobre las\nempresas\n \nmultinacionales\n \ny\n \nla\n \npolítica\n \nsocial.\n \nRecuperado\n \nde\nhttp://www.ilo.org/wcmsp5/groups/public/@dgreports/@dcomm/documents/normativeinstrument/kd\n00121es.pdf.\n  LO03: Organización de las Naciones Unidas - ONU (2015). Convenio marco sobre el cambio climático.\nRecuperado de http://unfccc.int/resource/docs/2015/cop21/spa/l09s.pdf.\n  LO05: European Union - UE (2020). Comunicación de la Comisión al Parlamento Europeo, al Consejo,\nal Comité Económico y Social Europeo y al Comité de las Regiones. Nuevo Plan de acción para la\neconomía\n \ncircular\n \npor\n \nuna\n \nEuropa\n \nmás\n \nlimpia\n \ny\n \nmás\n \ncompetitiva.\nhttps://eurlex.europa.eu/resource.html?uri=cellar:9903b325-6388-11ea-b735-\n01aa75ed71a1.0018.02/DOC_1yformat=PDF\n \n(2020).\n \n.\n \n.\n \n.\n \n.\n \nRecuperado\n \nde\nhttps://eurlex.europa.eu/resource.html?uri=cellar:9903b325-6388-11ea-b735-\n01aa75ed71a1.0018.02/DOC_1yformat=PDF.\n  LO06: Organización de las Naciones Unidas ONU (2015). Transforming our World: the 2030 Agenda for\nSustainable  Development.  Recuperado  de  http://www.un.org/ga/search/view_doc.asp?\nsymbol=A/RES/70/1yLang=E.\n  LO11: Harari, Y. N. (2013) Sapiens. El credo capitalista. Cap. 1 en: De animales a dioses. Una breve\nhistoria de la humanidad. (pp.336-367). (2013). Sapiens. El credo capitalista. En (). De animales a\ndioses. Una breve historia de la humanidad. (pp. ). : .\n  LO12: Secretaria Central de ISSO (2010). ISO 26000:2010. Guía de responsabilidad social. Ginebra.\nSecretaria\n \nCentral\n \nde\n \nISO.\n \n21-75.\n \nRecuperado\n \nde\nhttp://fundahrse.org/wpcontent/uploads/2016/01/Borrador-ISO-26000.pdf.\n  LO13: GRI (2022) Consolidated set of the GRI Standards.\n  LO14: ETHOS-IARSE. Indicadores ETHOS IARSE para Negocios Sustentables y Responsables; versión\n3.3. (2019). . Recuperado de Recuperado de http://www.iarse.org/indicadores.\n  LO16:  Perera,  L.  (2011).  Gobierno  Corporativo.  En  A.  Vives,  y  E.  Peinado-Vara  (Eds).  La\nResponsabilidad  social  de  la  empresa  en  América  Latina.  (pp.  305-322).  New  York:  Banco\nInteramericano de Desarrollo.\n  LO21: Lash, J., y Wellington, F. (2007). Competitive advantage on a warming planet. Harvard Business\nReview. 85(3). 94-104. Recuperado de https://www.ncbi.nlm.nih.gov/pubmed/17348173.\n  LO22: Slaper, T. F., y Hall, T. J. (2011). The triple bottom line: what is it and how does it work?. Indiana\nBusiness\n \nReview.\n \n86(1).\n \n4-8.\n \nRecuperado\n \nde\nhttps://www.ibrc.indiana.edu/ibr/2011/spring/article2.html.\n  LO25: Del Castillo, E. (2011). Estrategias de responsabilidad social empresarial. En A. Vives, y E.\nPeinado-Vara (Eds). La Responsabilidad social de la empresa en América Latina. (pp. 229-248).\nNew York: Banco Interamericano de Desarrollo.\n142085 A 2023-01-PRE\nPág. 11 de 13\n  LO26: Vives A. (2020) Broadening the purpose of the corporation requires purposeful implementation.\nHarvard\n \nDeusto\n \nBusiness\n \nResearch,\n \nvolumen\n \n9,\n \nnúmero\n \n2.\nhttp://www.cumpetere.com/wpcontent/uploads/2020/12/Purpose-HBRDeusto.pdf  (2020).  .  .  .  .\nRecuperado de http://www.cumpetere.com/wp-content/uploads/2020/12/Purpose-HBRDeusto.pdf.\n  LO27: Correa, M. E., y Estévez, R (2011). Gestión de la RSE: cambio y diseño organizacional. En A.\nVives, y E. Peinado-Vara (Eds). La Responsabilidad social de la empresa en América Latina. (pp.\n249-264). New York: Banco Interamericano de Desarrollo\n  LO28: Porter, M. E., y Kramer, M. R. (2006). Strategy and society: The link between competitive\nadvantage  and  Corporate  Social  Responsibility.  Harvard  Business  Review.  84(12).  78-92.\nRecuperado\n \nde\n \nhttps://hbr.org/2006/12/strategy-and-society-the-link-between-\ncompetitiveadvantage-and-corporate-social-responsibility.\n  LO29: Porter, M. E., y Kramer, M. R. (2011). Creating shared value. How to reinvent capitalism-and\nunleash a wave of innovation and growth. Harvard Business Review. 89(1/2). 62-77. Recuperado\nde\n \nhttps://sharedvalue.org.au/wp-content/uploads/2015/12/Harvard-Business-Review-\nCreatingShared-Value.pdf.\n  LO30: Epstein, M. J., y Wisner, P. S. (2011). Using a balanced scorecard to implement sustainability.\nEnvironmental Quality Management. 11(2). 1-10. Recuperado de 10.1002/tqem.1300.\n \n \nLO33:  Rangan,  K.;  Chase,  L.;  Karim,  S.  (2015)  The  truth  about  CSR.  HBR.\nhttps://hbr.org/2015/01/thetruth-about-csr (2015). . . . . Recuperado de .\n LO01: Stiglitz, J., Sen, A., Fittoussi, J. (2009). Informe de la comisión sobre la medición del desarrollo\neconómico  y  del  progreso  social.  París:  Institut  National  de  la  Statistique  et  des  Études\nÉconomiques.\n \nRecuperado\n \nde\nhttp://www.palermo.edu/Archivos_content/2015/derecho/pobreza_multidimensional/bibliografia/Bibli\no_adic5.pdf.\n LO04: PNUMA - Programa de las Naciones Unidas para el Medio Ambiente (2011). Hacia una economía\nverde:  Guía  para  el  desarrollo  sostenible  y  erradicación  de  la  pobreza.  Recuperado  de\nhttps://web.unep.org/greeneconomy/sites/unep.org.greeneconomy/files/publications/ger/GER_synth\nesis_sp.pdf.\n \nLO07:  UNCTAD  (2016).  Directrices  para  la  Protección  del  Consumidor.  ONU.\nhttps://unctad.org/system/files/official-document/ditccplpmisc2016d1_es.pdf  (2016).  .  .  .  .\nRecuperado de .\n LO08: Friedman, M. (13 de Septiembre de 1970). The Social Responsibility of Business is to Increase its\nProfits. The New York Times Magazine. p. 32.\n LO09: Handy, C. (2002). ¿Para qué son los negocios?. Harvard Business Review America Latina. 80(12).\n41-46. Recuperado de 10.1108/17511341311286150.\n LO10: Jones (2013). Debating the responsibility of capitalism in historical y global perspective. Harvard\nBusiness  School.  (2013).  Debating  the  responibility  of  capitalism  in  historical  y  global\nperspective.  .  .  .  Recuperado  de  https://dash.harvard.edu/bitstream/handle/1/11508215/14-\n004.pdf?sequence=1yisAllowed=y .\n LO15: World Economic Forum (2020). Measuring Stakeholder Capitalism. Towards Common Metrics and\nConsistent Reporting of Sustainable Value Creation. White Paper. September 2020\n142085 A 2023-01-PRE\nPág. 12 de 13\n LO17: Peinado-Vara, E. (2011). RSE, grandes compradores y la cadena de valor.. En A. Vives, y E.\nPeinado-Vara (Eds). La Responsabilidad social de la empresa en América Latina. (pp. 143-160).\nNew York: Banco Interamericano de Desarrollo.\n LO18: Guzmán Gonzales, M. G. (2016). Dimensión interna de la responsabilidad social empresarial\ndesde la óptica de la gestión de recursos humanos / INTERNAL DIMENSION OF CORPORATE\nSOCIAL RESPONSIBILITY  FROM  THE  OPTICS  OF  HUMAN  RESOURCES  MANAGEMENT.\nSaber, 28(4), 794805. (). . . . . Recuperado de .\n LO19: Schwalb, M. M. (2011). La responsabilidad de la empresa ante los consumidores. En A. Vives, y\nE. Peinado-Vara (Eds). La Responsabilidad social de la empresa en América Latina. (pp. 87-110).\nNew York: Banco Interamericano de Desarrollo.\n LO20: Cortina A. (2002). Por una ética del consumo. Editorial Taurus. Introducción y Cap. 1 Pg. 11-40\n(2002). Por una ética del consumo. En (). . (pp. ). : .\n LO23: Vives, A. y Peinado Vara, E (2011). La responsabilidad social como factor de competitividad en la\nempresa. En A. Vives, y E. Peinado-Vara (Eds). La Responsabilidad social de la empresa en\nAmérica Latina. (pp. 203-224). New York: Banco Interamericano de Desarrollo.\n LO24: Mitchell, R., Agle, B., y Wood, D. (1997). Toward a Theory of Stakeholder Identification and\nSalience: Defining the Principle of Who and What Really Counts. The Academy of Management\nReview. 22(4). 853-886. Recuperado de 10.5465/AMR.1997.9711022105.\n LO31: Fernández-Fernández, José-Luis. (2011). De la RSC a la sostenibilidad corporativa: una evolución\nnecesaria para la creación de valor. Harvard-Deusto Business Review.\n LO32: Marín García Sergio (2019).  Sostenibilidad y RSC. Cuadernos de la Cátedra CaixaBank de\nResponsabilidad Social Corporativa - IESE, N 41, Mayo 2019. \n142085 A 2023-01-PRE\nPág. 13 de 13\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdfs</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\syllabus&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">base</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">pdfs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.pdf&#39;</span><span class="p">)):</span>
+            <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">filenames</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>276
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_texts_from_pdfs</span><span class="p">(</span><span class="n">filepaths</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extracts text from multiple PDF files using parallel processing.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    filepaths (list): A list of file paths to the PDF files.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    pd.DataFrame: A DataFrame with the filenames and extracted texts.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Use ProcessPoolExecutor for parallel processing</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">extract_text_from_pdf</span><span class="p">,</span> <span class="n">filepaths</span><span class="p">))</span>
+
+    <span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">for</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="n">filepaths</span><span class="p">]</span>
+
+    <span class="c1"># Create a DataFrame from the results and filenames</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;filepath&#39;</span><span class="p">:</span> <span class="n">filepaths</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">filenames</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">results</span><span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">extract_texts_from_pdfs</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>filepath</th>
+      <th>filename</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(1) 142085 - Gestión de la Sostenibilidad Soc...</td>
+      <td>Sílabo\n142085 - Gestión de la Sostenibilidad ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(1) 144741 - Gestión de Personas (2023-I).pdf</td>
+      <td>Sílabo\n144741 - Gestión de Personas\nI.\nInfo...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(2) 142085 - Gestión de la Sostenibilidad Soc...</td>
+      <td>\n1/12 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(2) 144741 - Gestión de Personas (2023-I).pdf</td>
+      <td>\n \n \n1 \n \nSÍLABO \nI.      Información g...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>140663 - Negocios Inclusivos (2023-I).pdf</td>
+      <td>Sílabo\n140663 - Negocios Inclusivos\nI.\nInfo...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141036 - Análisis Multivariado para los Negoc...</td>
+      <td>Sílabo\n141036 - Análisis Multivariado para lo...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141038 - Fundamentos de las Ciencias Empresari...</td>
+      <td>Sílabo\n141038 - Fundamentos de las Ciencias E...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141041 - Gestión de la Cadena de Suministros ...</td>
+      <td>Sílabo\n141041 - Gestión de la Cadena de Sumin...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141042 - Investigación Aplicada a los Negocio...</td>
+      <td>\n5/5 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141401- Manejo Conflictos (2023 - I).pdf</td>
+      <td>\n1/2 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="key-characteristic-identification">
+<h3><span class="section-number">1.2.2. </span>Key characteristic identification<a class="headerlink" href="#key-characteristic-identification" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define regex pattern to identify references to group projects</span>
+<span class="n">project_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b(proyecto(|s)\s+grupal(|es)|proyecto(|s)\s+en\s+grupo|trabajo(|s)\s+grupal(|es)|proyecto\s+final|group\s+project(|s)|trabajo(|s)\s+en\s+grupo)\b&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+
+<span class="c1"># Create a new column to indicate references to group projects</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;group_project&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">project_pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define regex pattern to identify references to teamwork</span>
+<span class="n">team_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b(trabajo\s+en\s+equipo|teamwork)\b&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+
+<span class="c1"># Create a new column to indicate references to teamwork</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;teamwork&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">team_pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to extract course code</span>
+<span class="k">def</span> <span class="nf">extract_course_code</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\b\d</span><span class="si">{6}</span><span class="s1">|1MN\d</span><span class="si">{3}</span><span class="s1">|1F\d</span><span class="si">{4}</span><span class="s1">\b)&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1"># Apply the function to the &#39;filename&#39; column and create a new column &#39;course_code&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_course_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Faculty mapping</span>
+<span class="n">faculty_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;12&#39;</span><span class="p">:</span> <span class="s1">&#39;Humanidades&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;13&#39;</span><span class="p">:</span> <span class="s1">&#39;Economía&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;14&#39;</span><span class="p">:</span> <span class="s1">&#39;Administración&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;15&#39;</span><span class="p">:</span> <span class="s1">&#39;Ciencia Sociales&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;16&#39;</span><span class="p">:</span> <span class="s1">&#39;Contabilidad&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;17&#39;</span><span class="p">:</span> <span class="s1">&#39;Ingeniería&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;18&#39;</span><span class="p">:</span> <span class="s1">&#39;Derecho&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;1F&#39;</span><span class="p">:</span> <span class="s1">&#39;Finanzas&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;1MN&#39;</span><span class="p">:</span> <span class="s1">&#39;Marketing y Negocios&#39;</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Function to determine faculty based on course code</span>
+<span class="k">def</span> <span class="nf">get_faculty</span><span class="p">(</span><span class="n">course_code</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">course_code</span><span class="p">:</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="n">course_code</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">course_code</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="n">faculty_mapping</span> <span class="k">else</span> <span class="n">course_code</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">faculty_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Unknown&#39;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;faculty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_faculty</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>filepath</th>
+      <th>filename</th>
+      <th>text</th>
+      <th>group_project</th>
+      <th>teamwork</th>
+      <th>course_code</th>
+      <th>faculty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(1) 142085 - Gestión de la Sostenibilidad Soc...</td>
+      <td>Sílabo\n142085 - Gestión de la Sostenibilidad ...</td>
+      <td>False</td>
+      <td>True</td>
+      <td>142085</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(1) 144741 - Gestión de Personas (2023-I).pdf</td>
+      <td>Sílabo\n144741 - Gestión de Personas\nI.\nInfo...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>144741</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(2) 142085 - Gestión de la Sostenibilidad Soc...</td>
+      <td>\n1/12 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
+      <td>False</td>
+      <td>True</td>
+      <td>142085</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(2) 144741 - Gestión de Personas (2023-I).pdf</td>
+      <td>\n \n \n1 \n \nSÍLABO \nI.      Información g...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>144741</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>140663 - Negocios Inclusivos (2023-I).pdf</td>
+      <td>Sílabo\n140663 - Negocios Inclusivos\nI.\nInfo...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>140663</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141036 - Análisis Multivariado para los Negoc...</td>
+      <td>Sílabo\n141036 - Análisis Multivariado para lo...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>141036</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141038 - Fundamentos de las Ciencias Empresari...</td>
+      <td>Sílabo\n141038 - Fundamentos de las Ciencias E...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>141038</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141041 - Gestión de la Cadena de Suministros ...</td>
+      <td>Sílabo\n141041 - Gestión de la Cadena de Sumin...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>141041</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141042 - Investigación Aplicada a los Negocio...</td>
+      <td>\n5/5 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>141042</td>
+      <td>Administración</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141401- Manejo Conflictos (2023 - I).pdf</td>
+      <td>\n1/2 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>141401</td>
+      <td>Administración</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="tabulated-pdf-course-data-extraction">
+<h2><span class="section-number">1.3. </span>Tabulated PDF course data extraction<a class="headerlink" href="#tabulated-pdf-course-data-extraction" title="Link to this heading">#</a></h2>
+<p>This part of the notebook extracts structured data from a complexly formatted PDF file containing course information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">extract_text_from_pdf</span><span class="p">(</span><span class="n">data</span><span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\Oferta-Academica-2024-II-V5.pdf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Secc&#39;,
+ &#39;Tipo&#39;,
+ &#39;Docentes&#39;,
+ &#39;Cred&#39;,
+ &#39;Teoría o Práctica&#39;,
+ &#39;Día&#39;,
+ &#39;Horario&#39;,
+ &#39;Duración&#39;,
+ &#39;Cupo&#39;,
+ &#39;s&#39;,
+ &#39;Aula&#39;,
+ &#39;CURSOS ACADÉMICOS&#39;,
+ &#39;120266 - Antiguo Perú, Arqueología, Museos y Nuevas Tecnologías&#39;,
+ &#39;4,00&#39;,
+ &#39;A&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;A-303&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;X -302&#39;,
+ &#39;120253 - Antropología Filosófica&#39;,
+ &#39;4,00&#39;,
+ &#39;A&#39;,
+ &#39;DEL MASTRO PUCCIO, Cesare  anibal&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;A-105&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;A-105&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;10:30&#39;,
+ &#39;12:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;10:30&#39;,
+ &#39;12:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;126177 - Arte del Perú Contemporáneo&#39;,
+ &#39;3,00&#39;,
+ &#39;A&#39;,
+ &#39;AGUSTI PACHECO-BENAVIDES, Luis Alfredo&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;17:30&#39;,
+ &#39;20:20&#39;,
+ &#39;30&#39;,
+ &#39;A-206&#39;,
+ &#39;120259 - Cultura, Visualidad y Política&#39;,
+ &#39;4,00&#39;,
+ &#39;A&#39;,
+ &#39;WURST CAVASSA, Daniella &#39;,
+ &#39;FINAL  &#39;,
+ &#39;MIE&#39;,
+ &#39;10:30&#39;,
+ &#39;12:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;MIE&#39;,
+ &#39;10:30&#39;,
+ &#39;12:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;X -303&#39;,
+ &#39;CLASE  &#39;,
+ &#39;VIE&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;X -303&#39;,
+ &#39;120133 - Ética&#39;,
+ &#39;4,00&#39;,
+ &#39;A&#39;,
+ &#39;PIEDRA VALDEZ, Jose Leopoldo&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;31&#39;,
+ &#39;A-301&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;31&#39;,
+ &#39;A-301&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;31&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;31&#39;,
+ &#39;A-PEND&#39;,
+ &#39;AA&#39;,
+ &#39;DEXTRE UZATEGUI, Sergio Guillermo&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;B-402&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;B-402&#39;,
+ &#39;AB&#39;,
+ &#39;IVANOFF SABOGAL, Christian &#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;35&#39;,
+ &#39;H-402&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;35&#39;,
+ &#39;H-501&#39;,
+ &#39;AC&#39;,
+ &#39;IVANOFF SABOGAL, Christian &#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;H-402&#39;,
+ &#39;Horarios ofertados: 2024-II PERIODO-PRE&#39;,
+ &#39;PARDO GRAU, CECILIA&#39;,
+ &#39;Servicios Académicos y Registro&#39;,
+ &#39;17/07/2024 V5&#39;,
+ &#39;Se sugiere revisar la última versión en sar.up.edu.pe &#39;,
+ &#39;AC&#39;,
+ &#39;IVANOFF SABOGAL, Christian &#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;H-501&#39;,
+ &#39;B&#39;,
+ &#39;VALDIVIA BASELLI, Alberto  augusto&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;A-408&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;B-506&#39;,
+ &#39;C&#39;,
+ &#39;VALDIVIA BASELLI, Alberto  augusto&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-506&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-506&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;D&#39;,
+ &#39;VALDIVIA BASELLI, Alberto  augusto&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;19:30&#39;,
+ &#39;21:20&#39;,
+ &#39;35&#39;,
+ &#39;B-506&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;19:30&#39;,
+ &#39;21:20&#39;,
+ &#39;35&#39;,
+ &#39;B-506&#39;,
+ &#39;E&#39;,
+ &#39;VALDIVIA BASELLI, Alberto  augusto&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;35&#39;,
+ &#39;B-506&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;35&#39;,
+ &#39;B-506&#39;,
+ &#39;F&#39;,
+ &#39;DEL MASTRO PUCCIO, Cesare  anibal&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;13:30&#39;,
+ &#39;15:20&#39;,
+ &#39;30&#39;,
+ &#39;J-503&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;13:30&#39;,
+ &#39;15:20&#39;,
+ &#39;30&#39;,
+ &#39;J-503&#39;,
+ &#39;G&#39;,
+ &#39;DEL MASTRO PUCCIO, Cesare  anibal&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;J-503&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;J-503&#39;,
+ &#39;H&#39;,
+ &#39;QUIROZ MEZA, Danitza  dejanira&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;30&#39;,
+ &#39;X -203&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;30&#39;,
+ &#39;X -203&#39;,
+ &#39;I&#39;,
+ &#39;QUIROZ MEZA, Danitza  dejanira&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;X -303&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;X -303&#39;,
+ &#39;J&#39;,
+ &#39;QUIROZ MEZA, Danitza  dejanira&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;14:30&#39;,
+ &#39;16:20&#39;,
+ &#39;30&#39;,
+ &#39;X -301&#39;,
+ &#39;Horarios ofertados: 2024-II PERIODO-PRE&#39;,
+ &#39;Servicios Académicos y Registro&#39;,
+ &#39;17/07/2024 V5&#39;,
+ &#39;Se sugiere revisar la última versión en sar.up.edu.pe &#39;,
+ &#39;J&#39;,
+ &#39;QUIROZ MEZA, Danitza  dejanira&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;14:30&#39;,
+ &#39;16:20&#39;,
+ &#39;30&#39;,
+ &#39;X -301&#39;,
+ &#39;K&#39;,
+ &#39;TALAVERA CABREJOS, Gonzalo &#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;X -302&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;X -302&#39;,
+ &#39;L&#39;,
+ &#39;TALAVERA CABREJOS, Gonzalo &#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;X -302&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;X -302&#39;,
+ &#39;M&#39;,
+ &#39;TALAVERA CABREJOS, Gonzalo &#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;B-402&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;B-402&#39;,
+ &#39;N&#39;,
+ &#39;PONCE BOGINO, Hector  alberto&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;13:30&#39;,
+ &#39;15:20&#39;,
+ &#39;30&#39;,
+ &#39;A-105&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;13:30&#39;,
+ &#39;15:20&#39;,
+ &#39;30&#39;,
+ &#39;A-105&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;O&#39;,
+ &#39;PONCE BOGINO, Hector  alberto&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;A-107&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;A-107&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;P&#39;,
+ &#39;PONCE BOGINO, Hector  alberto&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-107&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-107&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;Q&#39;,
+ &#39;EGOAVIL RIOS, Jean  christian&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;35&#39;,
+ &#39;A-306&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;35&#39;,
+ &#39;A-306&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;R&#39;,
+ &#39;EGOAVIL RIOS, Jean  christian&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-306&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-306&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;S&#39;,
+ &#39;EGOAVIL RIOS, Jean  christian&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;19:30&#39;,
+ &#39;21:20&#39;,
+ &#39;30&#39;,
+ &#39;A-306&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;19:30&#39;,
+ &#39;21:20&#39;,
+ &#39;30&#39;,
+ &#39;A-306&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;Horarios ofertados: 2024-II PERIODO-PRE&#39;,
+ &#39;Servicios Académicos y Registro&#39;,
+ &#39;17/07/2024 V5&#39;,
+ &#39;Se sugiere revisar la última versión en sar.up.edu.pe &#39;,
+ &#39;S&#39;,
+ &#39;EGOAVIL RIOS, Jean  christian&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;T&#39;,
+ &#39;MORENO GONZALEZ, Rafael &#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;A-303&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;A-503&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;U&#39;,
+ &#39;MORENO GONZALEZ, Rafael &#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;A-303&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;30&#39;,
+ &#39;A-503&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;V&#39;,
+ &#39;MORENO GONZALEZ, Rafael &#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;14:30&#39;,
+ &#39;16:20&#39;,
+ &#39;30&#39;,
+ &#39;B-303&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;14:30&#39;,
+ &#39;16:20&#39;,
+ &#39;30&#39;,
+ &#39;B-303&#39;,
+ &#39;W&#39;,
+ &#39;VARGAS DELLA CASA, Rosa Elvira&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;16:30&#39;,
+ &#39;18:20&#39;,
+ &#39;35&#39;,
+ &#39;A-206&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;16:30&#39;,
+ &#39;18:20&#39;,
+ &#39;35&#39;,
+ &#39;A-206&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;X&#39;,
+ &#39;VARGAS DELLA CASA, Rosa Elvira&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;18:30&#39;,
+ &#39;20:20&#39;,
+ &#39;35&#39;,
+ &#39;A-206&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;18:30&#39;,
+ &#39;20:20&#39;,
+ &#39;35&#39;,
+ &#39;A-206&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;35&#39;,
+ &#39;A-PEND&#39;,
+ &#39;Y&#39;,
+ &#39;DEXTRE UZATEGUI, Sergio Guillermo&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;A-101&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;30&#39;,
+ &#39;A-502&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;Z&#39;,
+ &#39;DEXTRE UZATEGUI, Sergio Guillermo&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-101&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;17:30&#39;,
+ &#39;19:20&#39;,
+ &#39;30&#39;,
+ &#39;A-502&#39;,
+ &#39;FINAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;PARCIAL  &#39;,
+ &#39;LUN&#39;,
+ &#39;16:30&#39;,
+ &#39;18:30&#39;,
+ &#39;30&#39;,
+ &#39;A-PEND&#39;,
+ &#39;129007 - Filosofía&#39;,
+ &#39;4,00&#39;,
+ &#39;A&#39;,
+ &#39;CARRION CARAVEDO, Ursula &#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;A-301&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;09:30&#39;,
+ &#39;11:20&#39;,
+ &#39;30&#39;,
+ &#39;A-301&#39;,
+ &#39;B&#39;,
+ &#39;LASTRES DAMMERT, Pamela Maria&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;30&#39;,
+ &#39;A-404&#39;,
+ &#39;CLASE  &#39;,
+ &#39;VIE&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;30&#39;,
+ &#39;A-404&#39;,
+ &#39;C&#39;,
+ &#39;LASTRES DAMMERT, Pamela Maria&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;32&#39;,
+ &#39;H-302&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;07:30&#39;,
+ &#39;09:20&#39;,
+ &#39;32&#39;,
+ &#39;H-302&#39;,
+ &#39;Horarios ofertados: 2024-II PERIODO-PRE&#39;,
+ &#39;Servicios Académicos y Registro&#39;,
+ &#39;17/07/2024 V5&#39;,
+ &#39;Se sugiere revisar la última versión en sar.up.edu.pe &#39;,
+ &#39;D&#39;,
+ &#39;MORENO GONZALEZ, Rafael &#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;32&#39;,
+ &#39;A-302&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;32&#39;,
+ &#39;A-302&#39;,
+ &#39;E&#39;,
+ &#39;DEL MASTRO PUCCIO, Cesare  anibal&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;35&#39;,
+ &#39;J-503&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;35&#39;,
+ &#39;J-503&#39;,
+ &#39;F&#39;,
+ &#39;DEL MASTRO PUCCIO, Cesare  anibal&#39;,
+ &#39;CLASE  &#39;,
+ &#39;LUN&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;24&#39;,
+ &#39;H-508&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MIE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;24&#39;,
+ &#39;H-508&#39;,
+ &#39;G&#39;,
+ &#39;DEXTRE UZATEGUI, Sergio Guillermo&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;32&#39;,
+ &#39;A-402&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;11:30&#39;,
+ &#39;13:20&#39;,
+ &#39;32&#39;,
+ &#39;A-402&#39;,
+ &#39;H&#39;,
+ &#39;ASTUDILLO TORRES, Deyvi  harold&#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;32&#39;,
+ &#39;A-202&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;32&#39;,
+ &#39;A-202&#39;,
+ &#39;I&#39;,
+ &#39;MORENO GONZALEZ, Rafael &#39;,
+ &#39;CLASE  &#39;,
+ &#39;JUE&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;35&#39;,
+ &#39;A-302&#39;,
+ &#39;CLASE  &#39;,
+ &#39;MAR&#39;,
+ &#39;15:30&#39;,
+ &#39;17:20&#39;,
+ &#39;35&#39;,
+ &#39;A-302&#39;,
+ ...]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_sections</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">course_credits</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">current_course_code</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Split text by lines and process</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+    <span class="c1"># Match course code</span>
+    <span class="n">course_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\b\d</span><span class="si">{6}</span><span class="s2">|1MN\d</span><span class="si">{3}</span><span class="s2">|1F\d</span><span class="si">{4}</span><span class="s2">\b)\s+-\s+&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">course_match</span><span class="p">:</span>
+        <span class="n">current_course_code</span> <span class="o">=</span> <span class="n">course_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Check if the course code is in the list of interest</span>
+        <span class="k">if</span> <span class="n">current_course_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">]):</span>
+            <span class="n">current_course_code</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Reset if not interested</span>
+        <span class="k">continue</span>
+    
+    <span class="c1"># Match section code if we have a current course of interest</span>
+    <span class="k">if</span> <span class="n">current_course_code</span><span class="p">:</span>
+        <span class="n">section_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b^[A-Z]{1,2}$\b&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="n">credits_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b^(\d</span><span class="si">{1}</span><span class="s2">)\,\d</span><span class="si">{2}</span><span class="s2">$\b&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">section_match</span><span class="p">:</span>
+            <span class="n">section_code</span> <span class="o">=</span> <span class="n">section_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">course_sections</span><span class="p">[</span><span class="n">current_course_code</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">section_code</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">credits_match</span><span class="p">:</span>
+            <span class="n">credits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">credits_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="n">course_credits</span><span class="p">[</span><span class="n">current_course_code</span><span class="p">]</span> <span class="o">=</span> <span class="n">credits</span>
+
+<span class="k">for</span> <span class="n">course</span> <span class="ow">in</span> <span class="n">course_sections</span><span class="p">:</span>
+    <span class="n">course_sections</span><span class="p">[</span><span class="n">course</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">course_sections</span><span class="p">[</span><span class="n">course</span><span class="p">])))</span>
+    
+
+<span class="c1"># Count sections for each course</span>
+<span class="n">course_section_counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">course</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">sections</span><span class="p">)</span> <span class="k">for</span> <span class="n">course</span><span class="p">,</span> <span class="n">sections</span> <span class="ow">in</span> <span class="n">course_sections</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_section_size</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">current_course_code</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">current_code_section</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+    <span class="n">course_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\b\d</span><span class="si">{6}</span><span class="s2">|1MN\d</span><span class="si">{3}</span><span class="s2">|1F\d</span><span class="si">{4}</span><span class="s2">\b)\s+-\s+&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">course_match</span><span class="p">:</span>
+        <span class="n">current_course_code</span> <span class="o">=</span> <span class="n">course_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Check if the course code is in the list of interest</span>
+        <span class="k">if</span> <span class="n">current_course_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">]):</span>
+            <span class="n">current_course_code</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Reset if not interested</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">current_course_code</span><span class="p">:</span>
+        <span class="n">section_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b^[A-Z]{1,2}$\b&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">section_match</span><span class="p">:</span>
+            <span class="n">current_code_section</span> <span class="o">=</span> <span class="n">current_course_code</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">section_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">current_code_section</span> <span class="ow">and</span> <span class="n">current_course_code</span><span class="p">:</span>
+        <span class="n">class_size_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b^\d{1,3}$\b&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">class_size_match</span><span class="p">:</span>
+            <span class="n">class_size</span> <span class="o">=</span> <span class="n">class_size_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">course_section_size</span><span class="p">[</span><span class="n">current_code_section</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">class_size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display results</span>
+<span class="k">for</span> <span class="n">course_section</span><span class="p">,</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">course_section_size</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">course_section</span><span class="si">}</span><span class="s2"> size: </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> students&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>126177-A size: 30 students
+120133-A size: 31 students
+120133-AA size: 30 students
+120133-AB size: 35 students
+120133-AC size: 30 students
+120133-B size: 30 students
+120133-C size: 30 students
+120133-D size: 35 students
+120133-E size: 35 students
+120133-F size: 30 students
+120133-G size: 30 students
+120133-H size: 30 students
+120133-I size: 30 students
+120133-J size: 30 students
+120133-K size: 30 students
+120133-L size: 30 students
+120133-M size: 30 students
+120133-N size: 30 students
+120133-O size: 30 students
+120133-P size: 30 students
+120133-Q size: 35 students
+120133-R size: 30 students
+120133-S size: 30 students
+120133-T size: 30 students
+120133-U size: 30 students
+120133-V size: 30 students
+120133-W size: 35 students
+120133-X size: 35 students
+120133-Y size: 30 students
+120133-Z size: 30 students
+129007-A size: 30 students
+129007-B size: 30 students
+129007-C size: 32 students
+129007-D size: 32 students
+129007-E size: 35 students
+129007-F size: 24 students
+129007-G size: 32 students
+129007-H size: 32 students
+129007-I size: 35 students
+129007-J size: 32 students
+129007-K size: 32 students
+129007-L size: 30 students
+129007-M size: 32 students
+122005-A size: 30 students
+122005-B size: 30 students
+122005-C size: 27 students
+122005-D size: 30 students
+120199-A size: 27 students
+120070-A size: 30 students
+120070-B size: 30 students
+120070-C size: 30 students
+120070-D size: 35 students
+120070-E size: 35 students
+120070-F size: 30 students
+120070-G size: 30 students
+120070-H size: 35 students
+120070-I size: 30 students
+120070-J size: 30 students
+124019-A size: 35 students
+124019-B size: 35 students
+124019-C size: 35 students
+124019-D size: 30 students
+120001-A size: 0 students
+120001-B size: 18 students
+120001-C size: 29 students
+120001-D size: 29 students
+120001-E size: 30 students
+120001-F size: 29 students
+120001-G size: 30 students
+120001-H size: 30 students
+120001-I size: 30 students
+120001-J size: 30 students
+120001-K size: 24 students
+120001-L size: 30 students
+120001-M size: 29 students
+120001-N size: 30 students
+120001-O size: 30 students
+120001-P size: 30 students
+120001-Q size: 28 students
+120001-R size: 30 students
+120001-S size: 30 students
+120001-T size: 30 students
+120001-V size: 30 students
+120006-A size: 30 students
+120006-B size: 30 students
+120006-C size: 30 students
+120006-D size: 30 students
+120006-E size: 30 students
+120006-F size: 30 students
+120006-G size: 30 students
+120006-H size: 30 students
+120006-I size: 30 students
+120006-J size: 30 students
+120006-K size: 30 students
+120006-L size: 30 students
+120006-M size: 30 students
+120006-N size: 30 students
+120006-O size: 30 students
+120006-P size: 30 students
+120006-R size: 30 students
+124020-A size: 30 students
+124020-B size: 30 students
+127039-A size: 30 students
+120000-A size: 0 students
+120000-B size: 0 students
+120000-C size: 1 students
+120000-D size: 2 students
+120000-E size: 3 students
+120000-F size: 0 students
+120000-G size: 0 students
+120000-H size: 1 students
+120000-I size: 0 students
+120000-J size: 0 students
+120000-K size: 0 students
+120000-L size: 0 students
+120125-A size: 30 students
+120125-B size: 30 students
+120125-C size: 30 students
+120125-D size: 30 students
+120125-E size: 30 students
+120125-F size: 30 students
+120125-G size: 30 students
+120125-H size: 30 students
+120125-I size: 30 students
+120125-J size: 30 students
+120125-K size: 30 students
+120125-L size: 30 students
+120125-M size: 30 students
+120125-N size: 30 students
+120125-O size: 30 students
+130454-A size: 25 students
+130289-A size: 25 students
+130639-A size: 30 students
+130424-A size: 30 students
+130424-B size: 30 students
+130424-C size: 30 students
+130424-D size: 30 students
+138425-A size: 32 students
+138425-B size: 35 students
+138425-C size: 35 students
+132641-A size: 20 students
+132641-B size: 30 students
+132641-C size: 26 students
+132641-D size: 6 students
+132641-E size: 30 students
+132641-F size: 30 students
+132641-G size: 30 students
+132641-H size: 30 students
+132641-I size: 29 students
+132641-J size: 30 students
+132641-K size: 30 students
+132641-L size: 30 students
+132641-M size: 30 students
+132641-N size: 30 students
+132641-O size: 30 students
+132641-P size: 24 students
+132641-Q size: 30 students
+132641-R size: 30 students
+132641-S size: 30 students
+132641-T size: 30 students
+132641-U size: 30 students
+130642-A size: 35 students
+130642-C size: 35 students
+130642-D size: 35 students
+130642-E size: 35 students
+130642-F size: 30 students
+130642-G size: 24 students
+130642-H size: 35 students
+130642-I size: 35 students
+130642-J size: 35 students
+130642-K size: 35 students
+130642-M size: 35 students
+130642-N size: 35 students
+130642-O size: 35 students
+130642-P size: 30 students
+130462-A size: 35 students
+130043-A size: 30 students
+130223-A size: 32 students
+130223-B size: 32 students
+130223-C size: 32 students
+130223-D size: 32 students
+130224-A size: 30 students
+130224-D size: 30 students
+130224-E size: 30 students
+130224-F size: 30 students
+130224-G size: 30 students
+130224-H size: 30 students
+130224-I size: 30 students
+130224-J size: 30 students
+130224-K size: 30 students
+130224-L size: 30 students
+130224-M size: 30 students
+130224-N size: 30 students
+130224-O size: 30 students
+130224-P size: 30 students
+130224-Q size: 30 students
+130224-R size: 24 students
+130224-S size: 30 students
+130224-T size: 30 students
+130224-U size: 30 students
+130224-V size: 30 students
+130225-A size: 30 students
+130225-B size: 30 students
+130225-C size: 30 students
+130225-D size: 30 students
+130225-E size: 30 students
+130225-F size: 30 students
+130225-G size: 30 students
+130225-H size: 30 students
+130225-I size: 24 students
+133016-A size: 30 students
+133016-B size: 30 students
+133016-C size: 30 students
+133016-D size: 30 students
+135645-A size: 35 students
+135645-B size: 30 students
+135015-A size: 35 students
+135015-B size: 35 students
+131566-A size: 85 students
+130567-A size: 100 students
+134203-A size: 30 students
+134203-B size: 30 students
+134203-D size: 30 students
+134203-E size: 30 students
+132204-A size: 35 students
+132204-B size: 35 students
+132204-C size: 30 students
+130648-A size: 30 students
+130648-B size: 30 students
+130648-C size: 30 students
+130227-A size: 30 students
+130227-B size: 30 students
+130227-C size: 30 students
+138649-A size: 1 students
+138649-B size: 26 students
+138649-C size: 34 students
+138649-D size: 34 students
+138649-E size: 34 students
+138649-F size: 35 students
+138649-G size: 35 students
+138649-H size: 35 students
+138649-I size: 35 students
+138649-J size: 35 students
+138649-K size: 35 students
+138649-L size: 35 students
+138649-M size: 35 students
+138649-N size: 35 students
+138649-O size: 35 students
+138649-P size: 35 students
+138649-Q size: 35 students
+138649-R size: 30 students
+138649-S size: 35 students
+138649-T size: 35 students
+138649-U size: 35 students
+138649-V size: 35 students
+131650-A size: 35 students
+131650-B size: 35 students
+131650-C size: 35 students
+131650-D size: 35 students
+131650-E size: 35 students
+131650-F size: 30 students
+131650-G size: 30 students
+131650-H size: 35 students
+131650-I size: 35 students
+131650-J size: 30 students
+131650-K size: 35 students
+131650-L size: 35 students
+131650-M size: 30 students
+130233-A size: 30 students
+130233-B size: 30 students
+130233-C size: 30 students
+130233-D size: 30 students
+130233-E size: 35 students
+130233-F size: 30 students
+130229-A size: 35 students
+130229-B size: 35 students
+130229-C size: 30 students
+130229-D size: 35 students
+130230-A size: 35 students
+130230-B size: 35 students
+130230-C size: 35 students
+130230-D size: 35 students
+130230-E size: 35 students
+130230-F size: 35 students
+130335-A size: 35 students
+138201-A size: 30 students
+138201-B size: 24 students
+138201-C size: 30 students
+138201-D size: 30 students
+138201-E size: 30 students
+138201-F size: 30 students
+138201-G size: 30 students
+134427-A size: 35 students
+134427-B size: 35 students
+134427-C size: 30 students
+134427-D size: 35 students
+134427-E size: 35 students
+134654-A size: 1 students
+134654-B size: 0 students
+134654-C size: 2 students
+134654-D size: 0 students
+134654-E size: 0 students
+134654-F size: 0 students
+134654-G size: 6 students
+134654-H size: 0 students
+134654-I size: 6 students
+134654-J size: 11 students
+134654-K size: 11 students
+134654-L size: 8 students
+134654-M size: 1 students
+134654-N size: 14 students
+134654-O size: 12 students
+134654-P size: 13 students
+134654-Q size: 13 students
+134654-R size: 13 students
+134654-S size: 16 students
+130232-A size: 30 students
+130232-B size: 30 students
+130232-C size: 30 students
+132655-A size: 35 students
+132655-B size: 35 students
+130422-A size: 25 students
+130372-A size: 25 students
+130656-A size: 35 students
+130656-B size: 35 students
+130665-A size: 25 students
+141036-A size: 30 students
+141036-B size: 30 students
+141036-C size: 30 students
+141036-D size: 30 students
+141036-E size: 30 students
+141036-F size: 30 students
+142077-A size: 30 students
+142077-B size: 30 students
+149078-A size: 30 students
+149078-B size: 30 students
+149078-C size: 30 students
+142081-A size: 30 students
+142081-B size: 30 students
+142081-C size: 30 students
+142081-D size: 30 students
+142081-E size: 30 students
+142081-F size: 30 students
+142081-G size: 30 students
+142081-H size: 30 students
+142081-I size: 30 students
+142081-J size: 30 students
+142082-A size: 30 students
+142082-B size: 30 students
+142082-C size: 30 students
+142082-D size: 30 students
+142082-E size: 30 students
+142082-F size: 30 students
+142082-G size: 30 students
+142082-H size: 30 students
+141038-A size: 4 students
+141038-B size: 0 students
+141038-C size: 11 students
+141038-D size: 30 students
+141038-E size: 3 students
+141038-F size: 30 students
+141038-G size: 29 students
+141038-H size: 27 students
+141041-A size: 30 students
+141041-B size: 30 students
+142085-A size: 24 students
+142085-B size: 24 students
+142085-C size: 24 students
+142084-A size: 30 students
+142084-B size: 30 students
+142084-C size: 30 students
+142084-D size: 30 students
+142084-E size: 30 students
+144741-A size: 30 students
+144741-B size: 30 students
+144741-C size: 30 students
+144741-D size: 30 students
+142094-A size: 30 students
+142094-B size: 30 students
+142094-C size: 30 students
+142094-D size: 30 students
+142097-A size: 30 students
+142097-B size: 30 students
+142091-A size: 30 students
+142091-B size: 30 students
+141042-A size: 24 students
+141042-B size: 24 students
+141042-C size: 24 students
+142095-A size: 24 students
+142095-B size: 30 students
+142095-C size: 30 students
+142095-D size: 30 students
+142095-E size: 24 students
+142095-F size: 30 students
+142095-G size: 30 students
+142095-H size: 30 students
+142095-I size: 30 students
+142095-J size: 30 students
+142095-K size: 24 students
+142096-A size: 30 students
+142096-B size: 30 students
+142096-C size: 30 students
+142096-D size: 30 students
+142096-E size: 30 students
+142096-F size: 30 students
+142096-G size: 30 students
+142100-A size: 20 students
+142100-B size: 20 students
+142100-C size: 20 students
+142100-D size: 20 students
+158143-A size: 30 students
+158143-B size: 30 students
+158143-C size: 30 students
+158143-D size: 30 students
+150004-A size: 30 students
+150004-B size: 30 students
+150004-C size: 30 students
+150004-D size: 30 students
+150004-E size: 30 students
+150004-F size: 30 students
+150004-G size: 30 students
+150004-H size: 30 students
+150004-I size: 30 students
+150004-J size: 30 students
+150004-K size: 30 students
+150004-L size: 30 students
+150004-M size: 30 students
+150140-A size: 30 students
+150140-B size: 30 students
+150140-C size: 30 students
+150140-D size: 30 students
+150140-E size: 30 students
+150140-F size: 30 students
+150140-G size: 30 students
+150140-H size: 30 students
+150140-I size: 30 students
+150140-J size: 30 students
+150140-K size: 30 students
+150140-L size: 30 students
+150140-M size: 30 students
+150140-N size: 30 students
+150140-O size: 30 students
+157006-A size: 30 students
+157006-B size: 30 students
+157006-C size: 30 students
+157006-D size: 30 students
+157006-E size: 30 students
+157006-F size: 30 students
+157006-G size: 30 students
+157006-H size: 30 students
+157006-I size: 30 students
+157006-J size: 30 students
+157006-K size: 30 students
+150013-A size: 30 students
+150013-B size: 27 students
+150013-C size: 27 students
+150013-D size: 27 students
+150013-E size: 27 students
+150013-F size: 27 students
+150013-G size: 27 students
+150013-H size: 27 students
+150027-A size: 30 students
+150027-B size: 30 students
+158000-A size: 30 students
+158000-B size: 30 students
+158000-C size: 30 students
+158000-D size: 30 students
+158000-E size: 30 students
+158000-F size: 30 students
+158109-A size: 30 students
+158109-B size: 30 students
+158109-C size: 30 students
+158109-D size: 30 students
+158109-E size: 30 students
+158109-F size: 30 students
+160132-A size: 35 students
+160139-A size: 35 students
+163059-A size: 25 students
+160140-A size: 30 students
+167060-A size: 25 students
+167060-B size: 35 students
+167060-C size: 35 students
+160088-A size: 25 students
+160088-B size: 32 students
+160088-C size: 30 students
+160169-A size: 25 students
+160171-A size: 35 students
+160171-B size: 35 students
+160171-C size: 35 students
+160171-D size: 35 students
+160171-E size: 35 students
+160171-F size: 35 students
+160171-G size: 35 students
+160171-H size: 35 students
+160171-I size: 35 students
+160171-J size: 35 students
+160171-K size: 30 students
+160171-L size: 30 students
+160025-A size: 25 students
+160025-B size: 35 students
+160025-C size: 30 students
+160025-D size: 30 students
+160090-A size: 25 students
+160091-A size: 30 students
+160116-A size: 30 students
+160172-A size: 35 students
+160172-B size: 30 students
+160172-C size: 27 students
+160172-E size: 30 students
+160092-A size: 30 students
+160092-B size: 5 students
+160092-C size: 2 students
+160092-D size: 0 students
+160092-E size: 3 students
+160092-F size: 29 students
+160092-G size: 34 students
+160092-H size: 34 students
+160092-I size: 35 students
+160092-J size: 35 students
+160092-K size: 34 students
+160092-L size: 35 students
+160092-M size: 27 students
+160092-N size: 35 students
+160092-O size: 35 students
+160092-P size: 30 students
+160092-Q size: 34 students
+160092-R size: 35 students
+160092-S size: 35 students
+160174-A size: 25 students
+160175-A size: 20 students
+160099-A size: 24 students
+160101-A size: 25 students
+160094-A size: 30 students
+160096-A size: 30 students
+170324-A size: 24 students
+170043-A size: 24 students
+170119-A size: 30 students
+170119-B size: 30 students
+170119-C size: 30 students
+170216-A size: 30 students
+170342-A size: 30 students
+170212-A size: 30 students
+170212-B size: 30 students
+170329-A size: 25 students
+170329-B size: 25 students
+170329-C size: 25 students
+170329-D size: 25 students
+170329-E size: 25 students
+170137-A size: 30 students
+179062-A size: 30 students
+179062-B size: 30 students
+170336-A size: 30 students
+170336-B size: 30 students
+170343-A size: 30 students
+170343-B size: 30 students
+170345-A size: 30 students
+170345-B size: 30 students
+170335-A size: 30 students
+170335-B size: 30 students
+170335-C size: 24 students
+170335-D size: 24 students
+170331-A size: 30 students
+170331-B size: 30 students
+170179-A size: 30 students
+170179-B size: 30 students
+170179-C size: 25 students
+170135-A size: 30 students
+170135-B size: 30 students
+170339-A size: 30 students
+170354-A size: 30 students
+170354-B size: 30 students
+170354-C size: 30 students
+170211-A size: 0 students
+170211-B size: 0 students
+170211-C size: 28 students
+170211-D size: 28 students
+170352-A size: 35 students
+170352-B size: 32 students
+170338-A size: 24 students
+170333-A size: 30 students
+170344-A size: 30 students
+170344-B size: 30 students
+170131-A size: 0 students
+170131-B size: 0 students
+170131-C size: 0 students
+170131-D size: 1 students
+170131-E size: 0 students
+170131-F size: 0 students
+170131-G size: 0 students
+170131-H size: 2 students
+170131-I size: 4 students
+170131-J size: 1 students
+170131-K size: 5 students
+170131-L size: 30 students
+170131-M size: 4 students
+170131-N size: 15 students
+170131-O size: 0 students
+170131-P size: 11 students
+170131-Q size: 0 students
+170131-R size: 30 students
+170334-A size: 30 students
+170334-B size: 30 students
+170334-C size: 30 students
+170334-D size: 30 students
+170334-E size: 30 students
+170341-A size: 30 students
+170341-B size: 30 students
+170340-A size: 30 students
+170340-B size: 30 students
+170337-A size: 30 students
+170337-B size: 30 students
+170388-A size: 30 students
+170346-A size: 25 students
+170346-B size: 25 students
+170346-C size: 25 students
+170350-A size: 30 students
+170350-B size: 30 students
+170350-C size: 30 students
+170130-A size: 16 students
+170130-B size: 16 students
+170130-C size: 4 students
+170130-D size: 4 students
+170347-A size: 30 students
+170347-B size: 30 students
+187019-A size: 35 students
+187019-B size: 30 students
+189097-A size: 30 students
+189097-B size: 25 students
+180266-A size: 24 students
+180266-B size: 30 students
+180266-C size: 32 students
+180266-D size: 30 students
+182128-A size: 30 students
+180070-A size: 40 students
+180088-A size: 30 students
+180089-A size: 30 students
+180268-A size: 32 students
+180268-B size: 32 students
+180268-C size: 32 students
+180268-D size: 32 students
+180268-E size: 32 students
+180092-A size: 30 students
+180195-A size: 30 students
+180017-A size: 28 students
+180017-B size: 24 students
+186108-A size: 28 students
+186108-B size: 24 students
+186108-C size: 24 students
+180277-A size: 1 students
+180277-B size: 21 students
+180277-C size: 21 students
+186112-A size: 26 students
+180099-A size: 35 students
+189116-A size: 30 students
+180069-A size: 24 students
+180282-A size: 25 students
+180282-B size: 25 students
+1F0162-A size: 30 students
+1F0107-A size: 30 students
+1F0108-A size: 30 students
+1F0228-A size: 35 students
+1F0228-B size: 32 students
+1F0229-A size: 35 students
+1F0229-B size: 35 students
+1F0120-A size: 35 students
+1F0120-B size: 35 students
+1F0120-C size: 30 students
+1F0120-D size: 30 students
+1F0120-E size: 32 students
+1F0120-F size: 32 students
+1F0110-A size: 30 students
+1F0111-A size: 35 students
+1F0324-A size: 35 students
+1F0275-A size: 35 students
+1F0275-B size: 35 students
+1F0112-A size: 35 students
+1F0112-B size: 35 students
+1F0112-C size: 30 students
+1F0112-D size: 32 students
+1F0112-E size: 30 students
+1F0112-F size: 35 students
+1F0112-G size: 35 students
+1F0112-H size: 35 students
+1F0112-I size: 30 students
+1F0112-J size: 30 students
+1F0112-K size: 30 students
+1F0351-A size: 30 students
+1F0113-A size: 35 students
+1F0060-A size: 30 students
+1F0114-A size: 32 students
+1F0013-A size: 32 students
+1F0069-A size: 35 students
+1F0115-A size: 30 students
+1F0116-A size: 32 students
+1F0045-A size: 35 students
+1F0021-A size: 35 students
+1F0200-A size: 35 students
+1F0327-A size: 30 students
+1F0325-A size: 35 students
+1F0023-A size: 35 students
+1F0202-A size: 30 students
+1F0127-A size: 30 students
+1F0227-A size: 30 students
+1F0048-A size: 35 students
+1F0027-A size: 32 students
+1F0124-A size: 35 students
+1F0124-B size: 35 students
+1F0124-C size: 35 students
+1MN367-A size: 35 students
+1MN017-A size: 35 students
+1MN017-B size: 35 students
+1MN017-C size: 30 students
+1MN009-A size: 30 students
+1MN006-A size: 35 students
+1MN027-A size: 30 students
+1MN027-B size: 30 students
+1MN368-A size: 35 students
+1MN348-A size: 35 students
+1MN018-A size: 30 students
+1MN018-B size: 30 students
+1MN018-C size: 30 students
+1MN371-A size: 35 students
+1MN008-A size: 35 students
+1MN372-A size: 30 students
+1MN372-B size: 30 students
+1MN015-A size: 35 students
+1MN015-B size: 35 students
+1MN015-C size: 35 students
+1MN016-A size: 30 students
+1MN016-B size: 30 students
+1MN016-C size: 30 students
+1MN003-A size: 30 students
+1MN003-B size: 32 students
+1MN077-A size: 35 students
+1MN007-A size: 30 students
+1MN007-B size: 30 students
+1MN013-A size: 30 students
+1MN011-A size: 30 students
+1MN020-A size: 30 students
+1MN020-B size: 30 students
+1MN020-C size: 30 students
+1MN020-D size: 30 students
+1MN020-E size: 30 students
+1MN005-A size: 35 students
+1MN029-A size: 30 students
+1MN029-B size: 30 students
+1MN035-A size: 30 students
+1MN035-B size: 30 students
+1MN035-C size: 30 students
+1MN035-D size: 30 students
+1MN035-E size: 30 students
+1MN035-F size: 30 students
+1MN444-A size: 30 students
+1MN381-A size: 24 students
+1MN382-A size: 35 students
+1MN010-A size: 35 students
+1MN062-A size: 35 students
+1MN384-A size: 25 students
+1MN385-A size: 32 students
+1MN358-A size: 35 students
+1MN075-A size: 30 students
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_size_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">course_section_size</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;course_code_section&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">])</span>
+<span class="n">class_size_df</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">class_size_df</span><span class="p">[</span><span class="s1">&#39;course_code_section&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">class_size_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>course_code_section</th>
+      <th>size</th>
+      <th>course_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>126177-A</td>
+      <td>30</td>
+      <td>126177</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>120133-A</td>
+      <td>31</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>120133-AA</td>
+      <td>30</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>120133-AB</td>
+      <td>35</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120133-AC</td>
+      <td>30</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>120133-B</td>
+      <td>30</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>120133-C</td>
+      <td>30</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120133-D</td>
+      <td>35</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120133-E</td>
+      <td>35</td>
+      <td>120133</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>120133-F</td>
+      <td>30</td>
+      <td>120133</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_size_df</span> <span class="o">=</span> <span class="n">class_size_df</span><span class="p">[[</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;course_code&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">course_size_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>course_code</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>120000</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>120001</td>
+      <td>576</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>120006</td>
+      <td>510</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>120070</td>
+      <td>315</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120125</td>
+      <td>450</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>120133</td>
+      <td>901</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>120199</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>122005</td>
+      <td>117</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>124019</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124020</td>
+      <td>60</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_size_df</span><span class="p">[</span><span class="n">class_size_df</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;130567&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>course_code_section</th>
+      <th>size</th>
+      <th>course_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>219</th>
+      <td>130567-A</td>
+      <td>100</td>
+      <td>130567</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">course_size_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display results</span>
+<span class="k">for</span> <span class="n">course</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">course_section_counts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Course </span><span class="si">{</span><span class="n">course</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> sections&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Course 126177: 1 sections
+Course 120133: 29 sections
+Course 129007: 13 sections
+Course 122005: 4 sections
+Course 120199: 1 sections
+Course 120070: 10 sections
+Course 124019: 4 sections
+Course 120001: 21 sections
+Course 120006: 17 sections
+Course 124020: 2 sections
+Course 127039: 1 sections
+Course 120000: 12 sections
+Course 120125: 15 sections
+Course 130454: 1 sections
+Course 130289: 1 sections
+Course 130639: 1 sections
+Course 130424: 4 sections
+Course 138425: 3 sections
+Course 132641: 21 sections
+Course 130642: 14 sections
+Course 130462: 1 sections
+Course 130043: 1 sections
+Course 130223: 4 sections
+Course 130224: 20 sections
+Course 130225: 9 sections
+Course 133016: 4 sections
+Course 135645: 2 sections
+Course 135015: 2 sections
+Course 131566: 1 sections
+Course 130567: 1 sections
+Course 134203: 4 sections
+Course 132204: 3 sections
+Course 130648: 3 sections
+Course 130227: 3 sections
+Course 138649: 22 sections
+Course 131650: 13 sections
+Course 130233: 6 sections
+Course 130229: 4 sections
+Course 130230: 6 sections
+Course 130335: 1 sections
+Course 138201: 7 sections
+Course 134427: 5 sections
+Course 134654: 19 sections
+Course 130232: 3 sections
+Course 132655: 2 sections
+Course 130422: 1 sections
+Course 130372: 1 sections
+Course 130656: 2 sections
+Course 130665: 1 sections
+Course 141036: 6 sections
+Course 142077: 2 sections
+Course 149078: 3 sections
+Course 142081: 10 sections
+Course 142082: 8 sections
+Course 141038: 8 sections
+Course 141041: 2 sections
+Course 142085: 3 sections
+Course 142084: 5 sections
+Course 144741: 4 sections
+Course 142094: 4 sections
+Course 142097: 2 sections
+Course 142091: 2 sections
+Course 141042: 3 sections
+Course 142095: 11 sections
+Course 142096: 7 sections
+Course 142100: 4 sections
+Course 158143: 4 sections
+Course 150004: 13 sections
+Course 150140: 15 sections
+Course 157006: 11 sections
+Course 150013: 8 sections
+Course 150027: 2 sections
+Course 158000: 6 sections
+Course 158109: 6 sections
+Course 160132: 1 sections
+Course 160139: 1 sections
+Course 163059: 1 sections
+Course 160140: 1 sections
+Course 167060: 3 sections
+Course 160088: 3 sections
+Course 160169: 1 sections
+Course 160171: 12 sections
+Course 160025: 4 sections
+Course 160090: 1 sections
+Course 160091: 1 sections
+Course 160116: 1 sections
+Course 160172: 4 sections
+Course 160092: 19 sections
+Course 160174: 1 sections
+Course 160175: 1 sections
+Course 160099: 1 sections
+Course 160101: 1 sections
+Course 160094: 1 sections
+Course 160096: 1 sections
+Course 170324: 1 sections
+Course 170043: 1 sections
+Course 170119: 3 sections
+Course 170216: 1 sections
+Course 170342: 1 sections
+Course 170212: 2 sections
+Course 170329: 5 sections
+Course 170137: 1 sections
+Course 179062: 2 sections
+Course 170336: 2 sections
+Course 170343: 2 sections
+Course 170345: 2 sections
+Course 170335: 4 sections
+Course 170331: 2 sections
+Course 170179: 3 sections
+Course 170135: 2 sections
+Course 170339: 1 sections
+Course 170354: 3 sections
+Course 170211: 4 sections
+Course 170352: 2 sections
+Course 170338: 1 sections
+Course 170333: 1 sections
+Course 170344: 2 sections
+Course 170131: 18 sections
+Course 170334: 5 sections
+Course 170341: 2 sections
+Course 170340: 2 sections
+Course 170337: 2 sections
+Course 170388: 1 sections
+Course 170346: 3 sections
+Course 170350: 3 sections
+Course 170130: 4 sections
+Course 170347: 2 sections
+Course 187019: 2 sections
+Course 189097: 2 sections
+Course 180266: 4 sections
+Course 182128: 1 sections
+Course 180070: 1 sections
+Course 180088: 1 sections
+Course 180089: 1 sections
+Course 180268: 5 sections
+Course 180092: 1 sections
+Course 180195: 1 sections
+Course 180017: 2 sections
+Course 186108: 3 sections
+Course 180277: 3 sections
+Course 186112: 1 sections
+Course 180099: 1 sections
+Course 189116: 1 sections
+Course 180069: 1 sections
+Course 180282: 2 sections
+Course 1F0162: 1 sections
+Course 1F0107: 1 sections
+Course 1F0108: 1 sections
+Course 1F0228: 2 sections
+Course 1F0229: 2 sections
+Course 1F0120: 6 sections
+Course 1F0110: 1 sections
+Course 1F0111: 1 sections
+Course 1F0324: 1 sections
+Course 1F0275: 2 sections
+Course 1F0112: 11 sections
+Course 1F0351: 1 sections
+Course 1F0113: 1 sections
+Course 1F0060: 1 sections
+Course 1F0114: 1 sections
+Course 1F0013: 1 sections
+Course 1F0069: 1 sections
+Course 1F0115: 1 sections
+Course 1F0116: 1 sections
+Course 1F0045: 1 sections
+Course 1F0021: 1 sections
+Course 1F0200: 1 sections
+Course 1F0327: 1 sections
+Course 1F0325: 1 sections
+Course 1F0023: 1 sections
+Course 1F0202: 1 sections
+Course 1F0127: 1 sections
+Course 1F0227: 1 sections
+Course 1F0048: 1 sections
+Course 1F0027: 1 sections
+Course 1F0124: 3 sections
+Course 1MN367: 1 sections
+Course 1MN017: 3 sections
+Course 1MN009: 1 sections
+Course 1MN006: 1 sections
+Course 1MN027: 2 sections
+Course 1MN368: 1 sections
+Course 1MN348: 1 sections
+Course 1MN018: 3 sections
+Course 1MN371: 1 sections
+Course 1MN008: 1 sections
+Course 1MN372: 2 sections
+Course 1MN015: 3 sections
+Course 1MN016: 3 sections
+Course 1MN003: 2 sections
+Course 1MN077: 1 sections
+Course 1MN007: 2 sections
+Course 1MN013: 1 sections
+Course 1MN011: 1 sections
+Course 1MN020: 5 sections
+Course 1MN005: 1 sections
+Course 1MN029: 2 sections
+Course 1MN035: 6 sections
+Course 1MN444: 1 sections
+Course 1MN381: 1 sections
+Course 1MN382: 1 sections
+Course 1MN010: 1 sections
+Course 1MN062: 1 sections
+Course 1MN384: 1 sections
+Course 1MN385: 1 sections
+Course 1MN358: 1 sections
+Course 1MN075: 1 sections
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">course_code</span><span class="p">,</span> <span class="n">sections</span> <span class="ow">in</span> <span class="n">course_sections</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">course_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">sections</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>126177: [&#39;A&#39;]
+120133: [&#39;A&#39;, &#39;AA&#39;, &#39;AB&#39;, &#39;AC&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;, &#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;]
+129007: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;]
+122005: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+120199: [&#39;A&#39;]
+120070: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;]
+124019: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+120001: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;V&#39;]
+120006: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;R&#39;]
+124020: [&#39;A&#39;, &#39;B&#39;]
+127039: [&#39;A&#39;]
+120000: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;]
+120125: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;]
+130454: [&#39;A&#39;]
+130289: [&#39;A&#39;]
+130639: [&#39;A&#39;]
+130424: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+138425: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+132641: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;]
+130642: [&#39;A&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;]
+130462: [&#39;A&#39;]
+130043: [&#39;A&#39;]
+130223: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+130224: [&#39;A&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;]
+130225: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;]
+133016: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+135645: [&#39;A&#39;, &#39;B&#39;]
+135015: [&#39;A&#39;, &#39;B&#39;]
+131566: [&#39;A&#39;]
+130567: [&#39;A&#39;]
+134203: [&#39;A&#39;, &#39;B&#39;, &#39;D&#39;, &#39;E&#39;]
+132204: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+130648: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+130227: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+138649: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;]
+131650: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;]
+130233: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+130229: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+130230: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+130335: [&#39;A&#39;]
+138201: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;]
+134427: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
+134654: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;]
+130232: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+132655: [&#39;A&#39;, &#39;B&#39;]
+130422: [&#39;A&#39;]
+130372: [&#39;A&#39;]
+130656: [&#39;A&#39;, &#39;B&#39;]
+130665: [&#39;A&#39;]
+141036: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+142077: [&#39;A&#39;, &#39;B&#39;]
+149078: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+142081: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;]
+142082: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;]
+141038: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;]
+141041: [&#39;A&#39;, &#39;B&#39;]
+142085: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+142084: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
+144741: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+142094: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+142097: [&#39;A&#39;, &#39;B&#39;]
+142091: [&#39;A&#39;, &#39;B&#39;]
+141042: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+142095: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;]
+142096: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;]
+142100: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+158143: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+150004: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;]
+150140: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;]
+157006: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;]
+150013: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;]
+150027: [&#39;A&#39;, &#39;B&#39;]
+158000: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+158109: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+160132: [&#39;A&#39;]
+160139: [&#39;A&#39;]
+163059: [&#39;A&#39;]
+160140: [&#39;A&#39;]
+167060: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+160088: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+160169: [&#39;A&#39;]
+160171: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;]
+160025: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+160090: [&#39;A&#39;]
+160091: [&#39;A&#39;]
+160116: [&#39;A&#39;]
+160172: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;E&#39;]
+160092: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;]
+160174: [&#39;A&#39;]
+160175: [&#39;A&#39;]
+160099: [&#39;A&#39;]
+160101: [&#39;A&#39;]
+160094: [&#39;A&#39;]
+160096: [&#39;A&#39;]
+170324: [&#39;A&#39;]
+170043: [&#39;A&#39;]
+170119: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+170216: [&#39;A&#39;]
+170342: [&#39;A&#39;]
+170212: [&#39;A&#39;, &#39;B&#39;]
+170329: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
+170137: [&#39;A&#39;]
+179062: [&#39;A&#39;, &#39;B&#39;]
+170336: [&#39;A&#39;, &#39;B&#39;]
+170343: [&#39;A&#39;, &#39;B&#39;]
+170345: [&#39;A&#39;, &#39;B&#39;]
+170335: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+170331: [&#39;A&#39;, &#39;B&#39;]
+170179: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+170135: [&#39;A&#39;, &#39;B&#39;]
+170339: [&#39;A&#39;]
+170354: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+170211: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+170352: [&#39;A&#39;, &#39;B&#39;]
+170338: [&#39;A&#39;]
+170333: [&#39;A&#39;]
+170344: [&#39;A&#39;, &#39;B&#39;]
+170131: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;]
+170334: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
+170341: [&#39;A&#39;, &#39;B&#39;]
+170340: [&#39;A&#39;, &#39;B&#39;]
+170337: [&#39;A&#39;, &#39;B&#39;]
+170388: [&#39;A&#39;]
+170346: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+170350: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+170130: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+170347: [&#39;A&#39;, &#39;B&#39;]
+187019: [&#39;A&#39;, &#39;B&#39;]
+189097: [&#39;A&#39;, &#39;B&#39;]
+180266: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;]
+182128: [&#39;A&#39;]
+180070: [&#39;A&#39;]
+180088: [&#39;A&#39;]
+180089: [&#39;A&#39;]
+180268: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
+180092: [&#39;A&#39;]
+180195: [&#39;A&#39;]
+180017: [&#39;A&#39;, &#39;B&#39;]
+186108: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+180277: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+186112: [&#39;A&#39;]
+180099: [&#39;A&#39;]
+189116: [&#39;A&#39;]
+180069: [&#39;A&#39;]
+180282: [&#39;A&#39;, &#39;B&#39;]
+1F0162: [&#39;A&#39;]
+1F0107: [&#39;A&#39;]
+1F0108: [&#39;A&#39;]
+1F0228: [&#39;A&#39;, &#39;B&#39;]
+1F0229: [&#39;A&#39;, &#39;B&#39;]
+1F0120: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+1F0110: [&#39;A&#39;]
+1F0111: [&#39;A&#39;]
+1F0324: [&#39;A&#39;]
+1F0275: [&#39;A&#39;, &#39;B&#39;]
+1F0112: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;]
+1F0351: [&#39;A&#39;]
+1F0113: [&#39;A&#39;]
+1F0060: [&#39;A&#39;]
+1F0114: [&#39;A&#39;]
+1F0013: [&#39;A&#39;]
+1F0069: [&#39;A&#39;]
+1F0115: [&#39;A&#39;]
+1F0116: [&#39;A&#39;]
+1F0045: [&#39;A&#39;]
+1F0021: [&#39;A&#39;]
+1F0200: [&#39;A&#39;]
+1F0327: [&#39;A&#39;]
+1F0325: [&#39;A&#39;]
+1F0023: [&#39;A&#39;]
+1F0202: [&#39;A&#39;]
+1F0127: [&#39;A&#39;]
+1F0227: [&#39;A&#39;]
+1F0048: [&#39;A&#39;]
+1F0027: [&#39;A&#39;]
+1F0124: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+1MN367: [&#39;A&#39;]
+1MN017: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+1MN009: [&#39;A&#39;]
+1MN006: [&#39;A&#39;]
+1MN027: [&#39;A&#39;, &#39;B&#39;]
+1MN368: [&#39;A&#39;]
+1MN348: [&#39;A&#39;]
+1MN018: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+1MN371: [&#39;A&#39;]
+1MN008: [&#39;A&#39;]
+1MN372: [&#39;A&#39;, &#39;B&#39;]
+1MN015: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+1MN016: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+1MN003: [&#39;A&#39;, &#39;B&#39;]
+1MN077: [&#39;A&#39;]
+1MN007: [&#39;A&#39;, &#39;B&#39;]
+1MN013: [&#39;A&#39;]
+1MN011: [&#39;A&#39;]
+1MN020: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
+1MN005: [&#39;A&#39;]
+1MN029: [&#39;A&#39;, &#39;B&#39;]
+1MN035: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
+1MN444: [&#39;A&#39;]
+1MN381: [&#39;A&#39;]
+1MN382: [&#39;A&#39;]
+1MN010: [&#39;A&#39;]
+1MN062: [&#39;A&#39;]
+1MN384: [&#39;A&#39;]
+1MN385: [&#39;A&#39;]
+1MN358: [&#39;A&#39;]
+1MN075: [&#39;A&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">course_code</span><span class="p">,</span> <span class="n">credits</span> <span class="ow">in</span> <span class="n">course_credits</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">course_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">credits</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>126177: 3
+120133: 4
+129007: 4
+122005: 4
+120199: 3
+120070: 4
+124019: 4
+120001: 4
+120006: 4
+124020: 4
+127039: 4
+120000: 0
+120125: 4
+130454: 3
+130289: 2
+130639: 4
+130424: 5
+138425: 5
+132641: 5
+130642: 5
+130462: 2
+130043: 4
+130223: 4
+130224: 4
+130225: 4
+133016: 4
+135645: 4
+135015: 4
+131566: 2
+130567: 2
+134203: 5
+132204: 5
+130648: 5
+130227: 4
+138649: 5
+131650: 5
+130233: 5
+130229: 5
+130230: 4
+130335: 4
+138201: 5
+134427: 5
+134654: 0
+130232: 4
+132655: 4
+130422: 2
+130372: 2
+130656: 4
+130665: 4
+141036: 4
+142077: 3
+149078: 4
+142081: 4
+142082: 4
+141038: 4
+141041: 4
+142085: 4
+142084: 4
+144741: 4
+142094: 4
+142097: 3
+142091: 3
+141042: 3
+142095: 4
+142096: 4
+142100: 5
+158143: 4
+150004: 4
+150140: 3
+157006: 4
+150013: 4
+150027: 4
+158000: 4
+158109: 4
+160132: 4
+160139: 3
+163059: 4
+160140: 3
+167060: 4
+160088: 4
+160169: 4
+160171: 5
+160025: 5
+160090: 4
+160091: 4
+160116: 3
+160172: 5
+160092: 4
+160174: 4
+160175: 5
+160099: 4
+160101: 4
+160094: 4
+160096: 4
+170324: 4
+170043: 4
+170119: 4
+170216: 4
+170342: 3
+170212: 4
+170329: 4
+170137: 5
+179062: 4
+170336: 4
+170343: 3
+170345: 4
+170335: 4
+170331: 4
+170179: 4
+170135: 4
+170339: 4
+170354: 4
+170211: 4
+170352: 4
+170338: 4
+170333: 4
+170344: 4
+170131: 0
+170334: 4
+170341: 4
+170340: 4
+170337: 4
+170388: 3
+170346: 3
+170350: 4
+170130: 5
+170347: 4
+187019: 4
+189097: 4
+180266: 3
+182128: 3
+180070: 4
+180088: 4
+180089: 3
+180268: 3
+180092: 4
+180195: 3
+180017: 4
+186108: 4
+180277: 5
+186112: 4
+180099: 3
+189116: 3
+180069: 5
+180282: 4
+1F0162: 4
+1F0107: 5
+1F0108: 2
+1F0228: 4
+1F0229: 4
+1F0120: 5
+1F0110: 4
+1F0111: 5
+1F0324: 4
+1F0275: 4
+1F0112: 4
+1F0351: 4
+1F0113: 4
+1F0060: 2
+1F0114: 5
+1F0013: 4
+1F0069: 5
+1F0115: 4
+1F0116: 4
+1F0045: 2
+1F0021: 2
+1F0200: 2
+1F0327: 2
+1F0325: 2
+1F0023: 2
+1F0202: 2
+1F0127: 2
+1F0227: 2
+1F0048: 2
+1F0027: 2
+1F0124: 4
+1MN367: 4
+1MN017: 4
+1MN009: 4
+1MN006: 4
+1MN027: 3
+1MN368: 4
+1MN348: 4
+1MN018: 4
+1MN371: 3
+1MN008: 4
+1MN372: 3
+1MN015: 4
+1MN016: 4
+1MN003: 4
+1MN077: 3
+1MN007: 4
+1MN013: 3
+1MN011: 4
+1MN020: 4
+1MN005: 4
+1MN029: 4
+1MN035: 4
+1MN444: 3
+1MN381: 3
+1MN382: 4
+1MN010: 4
+1MN062: 4
+1MN384: 4
+1MN385: 3
+1MN358: 4
+1MN075: 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sections_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">course_section_counts</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="s1">&#39;sections&#39;</span><span class="p">])</span>
+<span class="n">credits_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">course_credits</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="s1">&#39;credits&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="consolidating-final-dataframe">
+<h2><span class="section-number">1.4. </span>Consolidating final Dataframe<a class="headerlink" href="#consolidating-final-dataframe" title="Link to this heading">#</a></h2>
+<section id="merging-aditional-information">
+<h3><span class="section-number">1.4.1. </span>Merging aditional information<a class="headerlink" href="#merging-aditional-information" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">sections_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">credits_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;available_2024_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sections&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>filepath</th>
+      <th>filename</th>
+      <th>text</th>
+      <th>group_project</th>
+      <th>teamwork</th>
+      <th>course_code</th>
+      <th>faculty</th>
+      <th>size</th>
+      <th>sections</th>
+      <th>credits</th>
+      <th>available_2024_2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(1) 142085 - Gestión de la Sostenibilidad Soc...</td>
+      <td>Sílabo\n142085 - Gestión de la Sostenibilidad ...</td>
+      <td>False</td>
+      <td>True</td>
+      <td>142085</td>
+      <td>Administración</td>
+      <td>72.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(1) 144741 - Gestión de Personas (2023-I).pdf</td>
+      <td>Sílabo\n144741 - Gestión de Personas\nI.\nInfo...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>144741</td>
+      <td>Administración</td>
+      <td>120.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(2) 142085 - Gestión de la Sostenibilidad Soc...</td>
+      <td>\n1/12 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
+      <td>False</td>
+      <td>True</td>
+      <td>142085</td>
+      <td>Administración</td>
+      <td>72.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>(2) 144741 - Gestión de Personas (2023-I).pdf</td>
+      <td>\n \n \n1 \n \nSÍLABO \nI.      Información g...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>144741</td>
+      <td>Administración</td>
+      <td>120.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>140663 - Negocios Inclusivos (2023-I).pdf</td>
+      <td>Sílabo\n140663 - Negocios Inclusivos\nI.\nInfo...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>140663</td>
+      <td>Administración</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>1MN384 - Plan de Marketing (2023-I).pdf</td>
+      <td>\n1/13 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1MN384</td>
+      <td>Marketing y Negocios</td>
+      <td>25.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>1MN385 - Pricing (2023-I).pdf</td>
+      <td>Sílabo\n1MN385 - Pricing\nI.\nInformación gene...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1MN385</td>
+      <td>Marketing y Negocios</td>
+      <td>32.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>1MN388 - Marketing de Contenidos (2023-I).pdf</td>
+      <td>\n1/3 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>1MN388</td>
+      <td>Marketing y Negocios</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>1MN444 - Marketing Internacional en China y As...</td>
+      <td>SÍLABO \nI. \nInformación General  \n \n• \nNo...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>1MN444</td>
+      <td>Marketing y Negocios</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>1MN445 - Gestión de Eco Marketing (2023-I).pdf</td>
+      <td>Sílabo\n1MN445 - Gestión de Eco Marketing\nI.\...</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1MN445</td>
+      <td>Marketing y Negocios</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>276 rows × 11 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="filtering-potential-courses">
+<h3><span class="section-number">1.4.2. </span>Filtering potential courses<a class="headerlink" href="#filtering-potential-courses" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_projects</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;group_project&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;available_2024_2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_projects</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>filepath</th>
+      <th>filename</th>
+      <th>text</th>
+      <th>group_project</th>
+      <th>teamwork</th>
+      <th>course_code</th>
+      <th>faculty</th>
+      <th>size</th>
+      <th>sections</th>
+      <th>credits</th>
+      <th>available_2024_2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>141036 - Análisis Multivariado para los Negoc...</td>
+      <td>Sílabo\n141036 - Análisis Multivariado para lo...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>141036</td>
+      <td>Administración</td>
+      <td>180.0</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>142082 - Emprendimiento e Innovación (2023-I)...</td>
+      <td>Sílabo\n142082 - Emprendimiento e Innovación\n...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>142082</td>
+      <td>Administración</td>
+      <td>240.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>142095 - Liderazgo (2023-I).pdf</td>
+      <td>\n \n1 \n \n \nSÍLABO \nI.      Información g...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>142095</td>
+      <td>Administración</td>
+      <td>312.0</td>
+      <td>11.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>157006 - Pensamiento Social Contemporáneo (20...</td>
+      <td>Sílabo\n157006 - Pensamiento Social Contemporá...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>157006</td>
+      <td>Ciencia Sociales</td>
+      <td>330.0</td>
+      <td>11.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\UP_n...</td>
+      <td>158000 - Sicología (2023-I).pdf</td>
+      <td>Sílabo\n158000 - Sicología\nI.\nInformación ge...</td>
+      <td>True</td>
+      <td>True</td>
+      <td>158000</td>
+      <td>Ciencia Sociales</td>
+      <td>180.0</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create clickable links to the PDF files</span>
+<span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;filepath&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&quot; target=&quot;_blank&quot;&gt;pdf&lt;/a&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">df_projects</span><span class="p">[[</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;sections&#39;</span><span class="p">,</span> <span class="s1">&#39;faculty&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>filename</th>
+      <th>size</th>
+      <th>sections</th>
+      <th>faculty</th>
+      <th>link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>141036 - Análisis Multivariado para los Negocios (2023-I).pdf</td>
+      <td>180.0</td>
+      <td>6.0</td>
+      <td>Administración</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\1_Administración\141036 - Análisis Multivariado para los Negocios (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>142082 - Emprendimiento e Innovación (2023-I).pdf</td>
+      <td>240.0</td>
+      <td>8.0</td>
+      <td>Administración</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\1_Administración\142082 - Emprendimiento e Innovación (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>142095 - Liderazgo (2023-I).pdf</td>
+      <td>312.0</td>
+      <td>11.0</td>
+      <td>Administración</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\1_Administración\142095 - Liderazgo (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>157006 - Pensamiento Social Contemporáneo (2023-I).pdf</td>
+      <td>330.0</td>
+      <td>11.0</td>
+      <td>Ciencia Sociales</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\2_Ciencias_Sociales_y_Políticas\157006 - Pensamiento Social Contemporáneo (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>158000 - Sicología (2023-I).pdf</td>
+      <td>180.0</td>
+      <td>6.0</td>
+      <td>Ciencia Sociales</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\2_Ciencias_Sociales_y_Políticas\158000 - Sicología (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>160092 - Fundamentos de Contabilidad (2023-I).pdf</td>
+      <td>507.0</td>
+      <td>19.0</td>
+      <td>Contabilidad</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\3_Contabilidad\160092 - Fundamentos de Contabilidad (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>160099 - Normas Contables Internacionales (2023-I).pdf</td>
+      <td>24.0</td>
+      <td>1.0</td>
+      <td>Contabilidad</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\3_Contabilidad\160099 - Normas Contables Internacionales (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>160139 - Aspectos Tributarios para la Empresa (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Contabilidad</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\3_Contabilidad\160139 - Aspectos Tributarios para la Empresa (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>160140 - Constitución y Formalización de MYPES (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Contabilidad</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\3_Contabilidad\160140 - Constitución y Formalización de MYPES (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>163059 - Auditoría (2023-I).pdf</td>
+      <td>25.0</td>
+      <td>1.0</td>
+      <td>Contabilidad</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\3_Contabilidad\163059 - Auditoría (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>180017 - Derechos Reales (2023-I).pdf</td>
+      <td>52.0</td>
+      <td>2.0</td>
+      <td>Derecho</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\4_Derecho\180017 - Derechos Reales (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>180069 - Sociedades (2023-I).pdf</td>
+      <td>24.0</td>
+      <td>1.0</td>
+      <td>Derecho</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\4_Derecho\180069 - Sociedades (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>180282 - Teoría General del Proceso (2023-I).pdf</td>
+      <td>50.0</td>
+      <td>2.0</td>
+      <td>Derecho</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\4_Derecho\180282 - Teoría General del Proceso (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>(2) 138201 - Microeconomía I (2023-I).pdf</td>
+      <td>204.0</td>
+      <td>7.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\(2) 138201 - Microeconomía I (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>130043 - Economía Pública (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\130043 - Economía Pública (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>130335 - Microeconomía del Comportamiento (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\130335 - Microeconomía del Comportamiento (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>130462 - Economía Peruana (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\130462 - Economía Peruana (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>130639 - Diseño y Evaluación Social de Proyectos (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\130639 - Diseño y Evaluación Social de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>130656 - Teoría del Comercio Internacional (2023-I).pdf</td>
+      <td>70.0</td>
+      <td>2.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\130656 - Teoría del Comercio Internacional (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>134427 - Microeconomía II (2023-I).pdf</td>
+      <td>170.0</td>
+      <td>5.0</td>
+      <td>Economía</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\5_Economía\134427 - Microeconomía II (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1F0021 - Sem. de Administración de Riesgo en Banca (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Finanzas</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\6_Finanzas\1F0021 - Sem. de Administración de Riesgo en Banca (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1F0111 - Finanzas Cuantitativas (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Finanzas</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\6_Finanzas\1F0111 - Finanzas Cuantitativas (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1F0114 - Macroeconomía Financiera (2023-I).pdf</td>
+      <td>32.0</td>
+      <td>1.0</td>
+      <td>Finanzas</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\6_Finanzas\1F0114 - Macroeconomía Financiera (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1F0229 - Economía Financiera II (2023-I).pdf</td>
+      <td>70.0</td>
+      <td>2.0</td>
+      <td>Finanzas</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\6_Finanzas\1F0229 - Economía Financiera II (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>(1) 120070 - Historia Económica y Empresarial (2023-I).pdf</td>
+      <td>315.0</td>
+      <td>10.0</td>
+      <td>Humanidades</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\7_Humanidades\(1) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>(2) 120070 - Historia Económica y Empresarial (2023-I).pdf</td>
+      <td>315.0</td>
+      <td>10.0</td>
+      <td>Humanidades</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\7_Humanidades\(2) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>120125 - Teología de las Religiones (2023-I).pdf</td>
+      <td>450.0</td>
+      <td>15.0</td>
+      <td>Humanidades</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\7_Humanidades\120125 - Teología de las Religiones (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>129007 - Filosofía (2023-I).pdf</td>
+      <td>408.0</td>
+      <td>13.0</td>
+      <td>Humanidades</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\7_Humanidades\129007 - Filosofía (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170043 - Analítica de la Web (2023-I).pdf</td>
+      <td>24.0</td>
+      <td>1.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170043 - Analítica de la Web (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170137 - Física  (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170137 - Física  (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170216 - Big Data Analytics (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170216 - Big Data Analytics (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170324 - Álgebra Líneal Aplicada (2023-I).pdf</td>
+      <td>24.0</td>
+      <td>1.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170324 - Álgebra Líneal Aplicada (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170329 - Design Thinking and Technological Innovation (2023-I).pdf</td>
+      <td>125.0</td>
+      <td>5.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170329 - Design Thinking and Technological Innovation (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170333 - Matemáticas Discretas para la Computación (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170333 - Matemáticas Discretas para la Computación (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170334 - Pensamiento Sistémico (2023-I).pdf</td>
+      <td>150.0</td>
+      <td>5.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170334 - Pensamiento Sistémico (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170336 - Fundamentos de Analítica (2023-I).pdf</td>
+      <td>60.0</td>
+      <td>2.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170336 - Fundamentos de Analítica (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170343 - Gerencia de Ingeniería de ValoR (2023-I).pdf</td>
+      <td>60.0</td>
+      <td>2.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170343 - Gerencia de Ingeniería de ValoR (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170350 - Tecnología y Negocios Digitales (2023-I).pdf</td>
+      <td>90.0</td>
+      <td>3.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170350 - Tecnología y Negocios Digitales (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>170352 - Investigación de Operaciones (2023-I).pdf</td>
+      <td>67.0</td>
+      <td>2.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\170352 - Investigación de Operaciones (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>179062 - Formulación y Evaluación de Proyectos (2023-I).pdf</td>
+      <td>60.0</td>
+      <td>2.0</td>
+      <td>Ingeniería</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\8_Ingeniería\179062 - Formulación y Evaluación de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN003 - Gestión Sostenible de la Oferta Exportable (2023-I).pdf</td>
+      <td>62.0</td>
+      <td>2.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN003 - Gestión Sostenible de la Oferta Exportable (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN017 - Comportamiento del Consumidor (2023-I).pdf</td>
+      <td>100.0</td>
+      <td>3.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN017 - Comportamiento del Consumidor (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN018 - Fundamentos de Marketing (2023-I).pdf</td>
+      <td>90.0</td>
+      <td>3.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN018 - Fundamentos de Marketing (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN029 - Marketing Digital y Redes Sociales (2023-I).pdf</td>
+      <td>60.0</td>
+      <td>2.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN029 - Marketing Digital y Redes Sociales (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN062 - Neuromarketing (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN062 - Neuromarketing (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN368 - Estrategias de Comunicación y Promoción (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN368 - Estrategias de Comunicación y Promoción (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN371 - Gestión Comercial (2023-I).pdf</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN371 - Gestión Comercial (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+    <tr>
+      <td>1MN444 - Marketing Internacional en China y Asia-Pacífico (2023-I).pdf</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>Marketing y Negocios</td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\UP_networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN444 - Marketing Internacional en China y Asia-Pacífico (2023-I).pdf" target="_blank">pdf</a></td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">1.1. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabi-text-analysis">1.2. Syllabi text Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-extraction">1.2.1. Text Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristic-identification">1.2.2. Key characteristic identification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulated-pdf-course-data-extraction">1.3. Tabulated PDF course data extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidating-final-dataframe">1.4. Consolidating final Dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-aditional-information">1.4.1. Merging aditional information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-potential-courses">1.4.2. Filtering potential courses</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matias Villalba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
