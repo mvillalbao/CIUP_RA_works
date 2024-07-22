@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/text_extraction_and_classification';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Welcome" href="../intro.html" />
+    <link rel="prev" title="Introduction" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,7 +174,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -375,16 +375,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">1.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabi-text-analysis">1.2. Syllabi text Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-extraction">1.2.1. Text Extraction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristic-identification">1.2.2. Key characteristic identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabi-text-analysis">Syllabi text Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-extraction">Text Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristic-identification">Key characteristic identification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulated-pdf-course-data-extraction">1.3. Tabulated PDF course data extraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidating-final-dataframe">1.4. Consolidating final Dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-aditional-information">1.4.1. Merging aditional information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-potential-courses">1.4.2. Filtering potential courses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulated-pdf-course-data-extraction">Tabulated PDF course data extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidating-final-dataframe">Consolidating final Dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-aditional-information">Merging aditional information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-potential-courses">Filtering potential courses</a></li>
 </ul>
 </li>
 </ul>
@@ -403,7 +403,7 @@ document.write(`
 <p>This notebook constructs a dataframe containing information about potential courses of interest for an RCT. It begins by extracting text from a large database of syllabi and identifying relevant characteristics using regular expressions. Then, it extracts additional course data from a complex tabulated PDF and enriches the main dataframe by matching course codes.</p>
 <p>The resulting dataframe was instrumental in selecting the course for the randomized control trial, as it facilitated the visualization of crucial course characteristics, such as potential observations, references to group projects in the syllabus, faculty details, and more.</p>
 <section id="setup">
-<h2><span class="section-number">1.1. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -426,7 +426,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\CIUP_RA_works\\code&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\code&#39;
 </pre></div>
 </div>
 </div>
@@ -442,9 +442,9 @@ document.write(`
 </div>
 </section>
 <section id="syllabi-text-analysis">
-<h2><span class="section-number">1.2. </span>Syllabi text Analysis<a class="headerlink" href="#syllabi-text-analysis" title="Link to this heading">#</a></h2>
+<h2>Syllabi text Analysis<a class="headerlink" href="#syllabi-text-analysis" title="Link to this heading">#</a></h2>
 <section id="text-extraction">
-<h3><span class="section-number">1.2.1. </span>Text Extraction<a class="headerlink" href="#text-extraction" title="Link to this heading">#</a></h3>
+<h3>Text Extraction<a class="headerlink" href="#text-extraction" title="Link to this heading">#</a></h3>
 <p>We define functions to programatically extract the text of all of our syllabus pdf files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,61 +579,61 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(1) 142085 - Gestión de la Sostenibilidad Soc...</td>
       <td>Sílabo\n142085 - Gestión de la Sostenibilidad ...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(1) 144741 - Gestión de Personas (2023-I).pdf</td>
       <td>Sílabo\n144741 - Gestión de Personas\nI.\nInfo...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(2) 142085 - Gestión de la Sostenibilidad Soc...</td>
       <td>\n1/12 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(2) 144741 - Gestión de Personas (2023-I).pdf</td>
       <td>\n \n \n1 \n \nSÍLABO \nI.      Información g...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>140663 - Negocios Inclusivos (2023-I).pdf</td>
       <td>Sílabo\n140663 - Negocios Inclusivos\nI.\nInfo...</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141036 - Análisis Multivariado para los Negoc...</td>
       <td>Sílabo\n141036 - Análisis Multivariado para lo...</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141038 - Fundamentos de las Ciencias Empresari...</td>
       <td>Sílabo\n141038 - Fundamentos de las Ciencias E...</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141041 - Gestión de la Cadena de Suministros ...</td>
       <td>Sílabo\n141041 - Gestión de la Cadena de Sumin...</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141042 - Investigación Aplicada a los Negocio...</td>
       <td>\n5/5 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141401- Manejo Conflictos (2023 - I).pdf</td>
       <td>\n1/2 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
     </tr>
@@ -643,7 +643,7 @@ document.write(`
 </div>
 </section>
 <section id="key-characteristic-identification">
-<h3><span class="section-number">1.2.2. </span>Key characteristic identification<a class="headerlink" href="#key-characteristic-identification" title="Link to this heading">#</a></h3>
+<h3>Key characteristic identification<a class="headerlink" href="#key-characteristic-identification" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define regex pattern to identify references to group projects</span>
@@ -746,7 +746,7 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(1) 142085 - Gestión de la Sostenibilidad Soc...</td>
       <td>Sílabo\n142085 - Gestión de la Sostenibilidad ...</td>
       <td>False</td>
@@ -756,7 +756,7 @@ document.write(`
     </tr>
     <tr>
       <th>1</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(1) 144741 - Gestión de Personas (2023-I).pdf</td>
       <td>Sílabo\n144741 - Gestión de Personas\nI.\nInfo...</td>
       <td>False</td>
@@ -766,7 +766,7 @@ document.write(`
     </tr>
     <tr>
       <th>2</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(2) 142085 - Gestión de la Sostenibilidad Soc...</td>
       <td>\n1/12 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
       <td>False</td>
@@ -776,7 +776,7 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(2) 144741 - Gestión de Personas (2023-I).pdf</td>
       <td>\n \n \n1 \n \nSÍLABO \nI.      Información g...</td>
       <td>False</td>
@@ -786,7 +786,7 @@ document.write(`
     </tr>
     <tr>
       <th>4</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>140663 - Negocios Inclusivos (2023-I).pdf</td>
       <td>Sílabo\n140663 - Negocios Inclusivos\nI.\nInfo...</td>
       <td>False</td>
@@ -796,7 +796,7 @@ document.write(`
     </tr>
     <tr>
       <th>5</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141036 - Análisis Multivariado para los Negoc...</td>
       <td>Sílabo\n141036 - Análisis Multivariado para lo...</td>
       <td>True</td>
@@ -806,7 +806,7 @@ document.write(`
     </tr>
     <tr>
       <th>6</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141038 - Fundamentos de las Ciencias Empresari...</td>
       <td>Sílabo\n141038 - Fundamentos de las Ciencias E...</td>
       <td>False</td>
@@ -816,7 +816,7 @@ document.write(`
     </tr>
     <tr>
       <th>7</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141041 - Gestión de la Cadena de Suministros ...</td>
       <td>Sílabo\n141041 - Gestión de la Cadena de Sumin...</td>
       <td>False</td>
@@ -826,7 +826,7 @@ document.write(`
     </tr>
     <tr>
       <th>8</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141042 - Investigación Aplicada a los Negocio...</td>
       <td>\n5/5 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
       <td>False</td>
@@ -836,7 +836,7 @@ document.write(`
     </tr>
     <tr>
       <th>9</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141401- Manejo Conflictos (2023 - I).pdf</td>
       <td>\n1/2 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
       <td>False</td>
@@ -851,7 +851,7 @@ document.write(`
 </section>
 </section>
 <section id="tabulated-pdf-course-data-extraction">
-<h2><span class="section-number">1.3. </span>Tabulated PDF course data extraction<a class="headerlink" href="#tabulated-pdf-course-data-extraction" title="Link to this heading">#</a></h2>
+<h2>Tabulated PDF course data extraction<a class="headerlink" href="#tabulated-pdf-course-data-extraction" title="Link to this heading">#</a></h2>
 <p>This part of the notebook extracts structured data from a complexly formatted PDF file containing course information.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1346,9 +1346,9 @@ Course 130642: 14 sections
 </div>
 </section>
 <section id="consolidating-final-dataframe">
-<h2><span class="section-number">1.4. </span>Consolidating final Dataframe<a class="headerlink" href="#consolidating-final-dataframe" title="Link to this heading">#</a></h2>
+<h2>Consolidating final Dataframe<a class="headerlink" href="#consolidating-final-dataframe" title="Link to this heading">#</a></h2>
 <section id="merging-aditional-information">
-<h3><span class="section-number">1.4.1. </span>Merging aditional information<a class="headerlink" href="#merging-aditional-information" title="Link to this heading">#</a></h3>
+<h3>Merging aditional information<a class="headerlink" href="#merging-aditional-information" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">sections_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;course_code&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
@@ -1399,7 +1399,7 @@ Course 130642: 14 sections
   <tbody>
     <tr>
       <th>0</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(1) 142085 - Gestión de la Sostenibilidad Soc...</td>
       <td>Sílabo\n142085 - Gestión de la Sostenibilidad ...</td>
       <td>False</td>
@@ -1413,7 +1413,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>1</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(1) 144741 - Gestión de Personas (2023-I).pdf</td>
       <td>Sílabo\n144741 - Gestión de Personas\nI.\nInfo...</td>
       <td>False</td>
@@ -1427,7 +1427,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>2</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(2) 142085 - Gestión de la Sostenibilidad Soc...</td>
       <td>\n1/12 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
       <td>False</td>
@@ -1441,7 +1441,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>3</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>(2) 144741 - Gestión de Personas (2023-I).pdf</td>
       <td>\n \n \n1 \n \nSÍLABO \nI.      Información g...</td>
       <td>False</td>
@@ -1455,7 +1455,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>4</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>140663 - Negocios Inclusivos (2023-I).pdf</td>
       <td>Sílabo\n140663 - Negocios Inclusivos\nI.\nInfo...</td>
       <td>False</td>
@@ -1483,7 +1483,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>271</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>1MN384 - Plan de Marketing (2023-I).pdf</td>
       <td>\n1/13 \n \n \n \nSÍLABO \n \nI. \nInformació...</td>
       <td>False</td>
@@ -1497,7 +1497,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>272</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>1MN385 - Pricing (2023-I).pdf</td>
       <td>Sílabo\n1MN385 - Pricing\nI.\nInformación gene...</td>
       <td>False</td>
@@ -1511,7 +1511,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>273</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>1MN388 - Marketing de Contenidos (2023-I).pdf</td>
       <td>\n1/3 \n \n \n \nSÍLABO \n \nI. \nInformación...</td>
       <td>True</td>
@@ -1525,7 +1525,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>274</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>1MN444 - Marketing Internacional en China y As...</td>
       <td>SÍLABO \nI. \nInformación General  \n \n• \nNo...</td>
       <td>True</td>
@@ -1539,7 +1539,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>275</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>1MN445 - Gestión de Eco Marketing (2023-I).pdf</td>
       <td>Sílabo\n1MN445 - Gestión de Eco Marketing\nI.\...</td>
       <td>False</td>
@@ -1558,7 +1558,7 @@ Course 130642: 14 sections
 </div>
 </section>
 <section id="filtering-potential-courses">
-<h3><span class="section-number">1.4.2. </span>Filtering potential courses<a class="headerlink" href="#filtering-potential-courses" title="Link to this heading">#</a></h3>
+<h3>Filtering potential courses<a class="headerlink" href="#filtering-potential-courses" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_projects</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;group_project&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;available_2024_2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1607,7 +1607,7 @@ Course 130642: 14 sections
   <tbody>
     <tr>
       <th>0</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>141036 - Análisis Multivariado para los Negoc...</td>
       <td>Sílabo\n141036 - Análisis Multivariado para lo...</td>
       <td>True</td>
@@ -1621,7 +1621,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>1</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>142082 - Emprendimiento e Innovación (2023-I)...</td>
       <td>Sílabo\n142082 - Emprendimiento e Innovación\n...</td>
       <td>True</td>
@@ -1635,7 +1635,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>2</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>142095 - Liderazgo (2023-I).pdf</td>
       <td>\n \n1 \n \n \nSÍLABO \nI.      Información g...</td>
       <td>True</td>
@@ -1649,7 +1649,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>3</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>157006 - Pensamiento Social Contemporáneo (20...</td>
       <td>Sílabo\n157006 - Pensamiento Social Contemporá...</td>
       <td>True</td>
@@ -1663,7 +1663,7 @@ Course 130642: 14 sections
     </tr>
     <tr>
       <th>4</th>
-      <td>C:\Users\Matias Villalba\Documents\GitHub\CIUP...</td>
+      <td>C:\Users\Matias Villalba\Documents\GitHub\VRI_...</td>
       <td>158000 - Sicología (2023-I).pdf</td>
       <td>Sílabo\n158000 - Sicología\nI.\nInformación ge...</td>
       <td>True</td>
@@ -1682,14 +1682,36 @@ Course 130642: 14 sections
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create clickable links to the PDF files</span>
-<span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;filepath&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&quot; target=&quot;_blank&quot;&gt;pdf&lt;/a&gt;&#39;</span><span class="p">)</span>
+<span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;local_link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;filepath&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&quot; target=&quot;_blank&quot;&gt;pdf&lt;/a&gt;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">df_projects</span><span class="p">[[</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;sections&#39;</span><span class="p">,</span> <span class="s1">&#39;faculty&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to keep only the first three levels of parent directories</span>
+<span class="k">def</span> <span class="nf">keep_three_levels</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="c1"># Split the path by backslashes</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1"># Join the first four parts (three levels + file name)</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
+
+<span class="c1"># Apply the function to the &#39;filepaths&#39; column</span>
+<span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;online_link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/&#39;</span> <span class="o">+</span> <span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;filepath&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">keep_three_levels</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;online_link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_projects</span><span class="p">[</span><span class="s1">&#39;online_link&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&quot; target=&quot;_blank&quot;&gt;pdf&lt;/a&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">df_projects</span><span class="p">[[</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;sections&#39;</span><span class="p">,</span> <span class="s1">&#39;faculty&#39;</span><span class="p">,</span> <span class="s1">&#39;local_link&#39;</span><span class="p">,</span> <span class="s1">&#39;online_link&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1701,7 +1723,8 @@ Course 130642: 14 sections
       <th>size</th>
       <th>sections</th>
       <th>faculty</th>
-      <th>link</th>
+      <th>local_link</th>
+      <th>online_link</th>
     </tr>
   </thead>
   <tbody>
@@ -1710,336 +1733,384 @@ Course 130642: 14 sections
       <td>180.0</td>
       <td>6.0</td>
       <td>Administración</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\1_Administración\141036 - Análisis Multivariado para los Negocios (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\1_Administración\141036 - Análisis Multivariado para los Negocios (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/1_Administración/141036 - Análisis Multivariado para los Negocios (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>142082 - Emprendimiento e Innovación (2023-I).pdf</td>
       <td>240.0</td>
       <td>8.0</td>
       <td>Administración</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\1_Administración\142082 - Emprendimiento e Innovación (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\1_Administración\142082 - Emprendimiento e Innovación (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/1_Administración/142082 - Emprendimiento e Innovación (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>142095 - Liderazgo (2023-I).pdf</td>
       <td>312.0</td>
       <td>11.0</td>
       <td>Administración</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\1_Administración\142095 - Liderazgo (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\1_Administración\142095 - Liderazgo (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/1_Administración/142095 - Liderazgo (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>157006 - Pensamiento Social Contemporáneo (2023-I).pdf</td>
       <td>330.0</td>
       <td>11.0</td>
       <td>Ciencia Sociales</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\2_Ciencias_Sociales_y_Políticas\157006 - Pensamiento Social Contemporáneo (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\2_Ciencias_Sociales_y_Políticas\157006 - Pensamiento Social Contemporáneo (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/2_Ciencias_Sociales_y_Políticas/157006 - Pensamiento Social Contemporáneo (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>158000 - Sicología (2023-I).pdf</td>
       <td>180.0</td>
       <td>6.0</td>
       <td>Ciencia Sociales</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\2_Ciencias_Sociales_y_Políticas\158000 - Sicología (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\2_Ciencias_Sociales_y_Políticas\158000 - Sicología (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/2_Ciencias_Sociales_y_Políticas/158000 - Sicología (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>160092 - Fundamentos de Contabilidad (2023-I).pdf</td>
       <td>507.0</td>
       <td>19.0</td>
       <td>Contabilidad</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\3_Contabilidad\160092 - Fundamentos de Contabilidad (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\3_Contabilidad\160092 - Fundamentos de Contabilidad (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/3_Contabilidad/160092 - Fundamentos de Contabilidad (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>160099 - Normas Contables Internacionales (2023-I).pdf</td>
       <td>24.0</td>
       <td>1.0</td>
       <td>Contabilidad</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\3_Contabilidad\160099 - Normas Contables Internacionales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\3_Contabilidad\160099 - Normas Contables Internacionales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/3_Contabilidad/160099 - Normas Contables Internacionales (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>160139 - Aspectos Tributarios para la Empresa (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Contabilidad</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\3_Contabilidad\160139 - Aspectos Tributarios para la Empresa (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\3_Contabilidad\160139 - Aspectos Tributarios para la Empresa (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/3_Contabilidad/160139 - Aspectos Tributarios para la Empresa (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>160140 - Constitución y Formalización de MYPES (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Contabilidad</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\3_Contabilidad\160140 - Constitución y Formalización de MYPES (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\3_Contabilidad\160140 - Constitución y Formalización de MYPES (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/3_Contabilidad/160140 - Constitución y Formalización de MYPES (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>163059 - Auditoría (2023-I).pdf</td>
       <td>25.0</td>
       <td>1.0</td>
       <td>Contabilidad</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\3_Contabilidad\163059 - Auditoría (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\3_Contabilidad\163059 - Auditoría (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/3_Contabilidad/163059 - Auditoría (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>180017 - Derechos Reales (2023-I).pdf</td>
       <td>52.0</td>
       <td>2.0</td>
       <td>Derecho</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\4_Derecho\180017 - Derechos Reales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\4_Derecho\180017 - Derechos Reales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/4_Derecho/180017 - Derechos Reales (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>180069 - Sociedades (2023-I).pdf</td>
       <td>24.0</td>
       <td>1.0</td>
       <td>Derecho</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\4_Derecho\180069 - Sociedades (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\4_Derecho\180069 - Sociedades (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/4_Derecho/180069 - Sociedades (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>180282 - Teoría General del Proceso (2023-I).pdf</td>
       <td>50.0</td>
       <td>2.0</td>
       <td>Derecho</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\4_Derecho\180282 - Teoría General del Proceso (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\4_Derecho\180282 - Teoría General del Proceso (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/4_Derecho/180282 - Teoría General del Proceso (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>(2) 138201 - Microeconomía I (2023-I).pdf</td>
       <td>204.0</td>
       <td>7.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\(2) 138201 - Microeconomía I (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\(2) 138201 - Microeconomía I (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/(2) 138201 - Microeconomía I (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>130043 - Economía Pública (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\130043 - Economía Pública (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\130043 - Economía Pública (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/130043 - Economía Pública (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>130335 - Microeconomía del Comportamiento (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\130335 - Microeconomía del Comportamiento (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\130335 - Microeconomía del Comportamiento (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/130335 - Microeconomía del Comportamiento (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>130462 - Economía Peruana (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\130462 - Economía Peruana (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\130462 - Economía Peruana (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/130462 - Economía Peruana (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>130639 - Diseño y Evaluación Social de Proyectos (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\130639 - Diseño y Evaluación Social de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\130639 - Diseño y Evaluación Social de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/130639 - Diseño y Evaluación Social de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>130656 - Teoría del Comercio Internacional (2023-I).pdf</td>
       <td>70.0</td>
       <td>2.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\130656 - Teoría del Comercio Internacional (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\130656 - Teoría del Comercio Internacional (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/130656 - Teoría del Comercio Internacional (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>134427 - Microeconomía II (2023-I).pdf</td>
       <td>170.0</td>
       <td>5.0</td>
       <td>Economía</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\5_Economía\134427 - Microeconomía II (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\5_Economía\134427 - Microeconomía II (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/5_Economía/134427 - Microeconomía II (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1F0021 - Sem. de Administración de Riesgo en Banca (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Finanzas</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\6_Finanzas\1F0021 - Sem. de Administración de Riesgo en Banca (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\6_Finanzas\1F0021 - Sem. de Administración de Riesgo en Banca (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/6_Finanzas/1F0021 - Sem. de Administración de Riesgo en Banca (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1F0111 - Finanzas Cuantitativas (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Finanzas</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\6_Finanzas\1F0111 - Finanzas Cuantitativas (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\6_Finanzas\1F0111 - Finanzas Cuantitativas (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/6_Finanzas/1F0111 - Finanzas Cuantitativas (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1F0114 - Macroeconomía Financiera (2023-I).pdf</td>
       <td>32.0</td>
       <td>1.0</td>
       <td>Finanzas</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\6_Finanzas\1F0114 - Macroeconomía Financiera (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\6_Finanzas\1F0114 - Macroeconomía Financiera (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/6_Finanzas/1F0114 - Macroeconomía Financiera (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1F0229 - Economía Financiera II (2023-I).pdf</td>
       <td>70.0</td>
       <td>2.0</td>
       <td>Finanzas</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\6_Finanzas\1F0229 - Economía Financiera II (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\6_Finanzas\1F0229 - Economía Financiera II (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/6_Finanzas/1F0229 - Economía Financiera II (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>(1) 120070 - Historia Económica y Empresarial (2023-I).pdf</td>
       <td>315.0</td>
       <td>10.0</td>
       <td>Humanidades</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\7_Humanidades\(1) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\7_Humanidades\(1) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/7_Humanidades/(1) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>(2) 120070 - Historia Económica y Empresarial (2023-I).pdf</td>
       <td>315.0</td>
       <td>10.0</td>
       <td>Humanidades</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\7_Humanidades\(2) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\7_Humanidades\(2) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/7_Humanidades/(2) 120070 - Historia Económica y Empresarial (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>120125 - Teología de las Religiones (2023-I).pdf</td>
       <td>450.0</td>
       <td>15.0</td>
       <td>Humanidades</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\7_Humanidades\120125 - Teología de las Religiones (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\7_Humanidades\120125 - Teología de las Religiones (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/7_Humanidades/120125 - Teología de las Religiones (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>129007 - Filosofía (2023-I).pdf</td>
       <td>408.0</td>
       <td>13.0</td>
       <td>Humanidades</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\7_Humanidades\129007 - Filosofía (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\7_Humanidades\129007 - Filosofía (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/7_Humanidades/129007 - Filosofía (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170043 - Analítica de la Web (2023-I).pdf</td>
       <td>24.0</td>
       <td>1.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170043 - Analítica de la Web (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170043 - Analítica de la Web (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170043 - Analítica de la Web (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170137 - Física  (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170137 - Física  (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170137 - Física  (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170137 - Física  (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170216 - Big Data Analytics (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170216 - Big Data Analytics (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170216 - Big Data Analytics (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170216 - Big Data Analytics (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170324 - Álgebra Líneal Aplicada (2023-I).pdf</td>
       <td>24.0</td>
       <td>1.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170324 - Álgebra Líneal Aplicada (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170324 - Álgebra Líneal Aplicada (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170324 - Álgebra Líneal Aplicada (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170329 - Design Thinking and Technological Innovation (2023-I).pdf</td>
       <td>125.0</td>
       <td>5.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170329 - Design Thinking and Technological Innovation (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170329 - Design Thinking and Technological Innovation (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170329 - Design Thinking and Technological Innovation (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170333 - Matemáticas Discretas para la Computación (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170333 - Matemáticas Discretas para la Computación (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170333 - Matemáticas Discretas para la Computación (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170333 - Matemáticas Discretas para la Computación (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170334 - Pensamiento Sistémico (2023-I).pdf</td>
       <td>150.0</td>
       <td>5.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170334 - Pensamiento Sistémico (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170334 - Pensamiento Sistémico (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170334 - Pensamiento Sistémico (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170336 - Fundamentos de Analítica (2023-I).pdf</td>
       <td>60.0</td>
       <td>2.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170336 - Fundamentos de Analítica (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170336 - Fundamentos de Analítica (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170336 - Fundamentos de Analítica (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170343 - Gerencia de Ingeniería de ValoR (2023-I).pdf</td>
       <td>60.0</td>
       <td>2.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170343 - Gerencia de Ingeniería de ValoR (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170343 - Gerencia de Ingeniería de ValoR (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170343 - Gerencia de Ingeniería de ValoR (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170350 - Tecnología y Negocios Digitales (2023-I).pdf</td>
       <td>90.0</td>
       <td>3.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170350 - Tecnología y Negocios Digitales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170350 - Tecnología y Negocios Digitales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170350 - Tecnología y Negocios Digitales (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>170352 - Investigación de Operaciones (2023-I).pdf</td>
       <td>67.0</td>
       <td>2.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\170352 - Investigación de Operaciones (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\170352 - Investigación de Operaciones (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/170352 - Investigación de Operaciones (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>179062 - Formulación y Evaluación de Proyectos (2023-I).pdf</td>
       <td>60.0</td>
       <td>2.0</td>
       <td>Ingeniería</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\8_Ingeniería\179062 - Formulación y Evaluación de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\8_Ingeniería\179062 - Formulación y Evaluación de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/8_Ingeniería/179062 - Formulación y Evaluación de Proyectos (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN003 - Gestión Sostenible de la Oferta Exportable (2023-I).pdf</td>
       <td>62.0</td>
       <td>2.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN003 - Gestión Sostenible de la Oferta Exportable (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN003 - Gestión Sostenible de la Oferta Exportable (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN003 - Gestión Sostenible de la Oferta Exportable (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN017 - Comportamiento del Consumidor (2023-I).pdf</td>
       <td>100.0</td>
       <td>3.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN017 - Comportamiento del Consumidor (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN017 - Comportamiento del Consumidor (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN017 - Comportamiento del Consumidor (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN018 - Fundamentos de Marketing (2023-I).pdf</td>
       <td>90.0</td>
       <td>3.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN018 - Fundamentos de Marketing (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN018 - Fundamentos de Marketing (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN018 - Fundamentos de Marketing (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN029 - Marketing Digital y Redes Sociales (2023-I).pdf</td>
       <td>60.0</td>
       <td>2.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN029 - Marketing Digital y Redes Sociales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN029 - Marketing Digital y Redes Sociales (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN029 - Marketing Digital y Redes Sociales (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN062 - Neuromarketing (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN062 - Neuromarketing (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN062 - Neuromarketing (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN062 - Neuromarketing (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN368 - Estrategias de Comunicación y Promoción (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN368 - Estrategias de Comunicación y Promoción (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN368 - Estrategias de Comunicación y Promoción (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN368 - Estrategias de Comunicación y Promoción (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN371 - Gestión Comercial (2023-I).pdf</td>
       <td>35.0</td>
       <td>1.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN371 - Gestión Comercial (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN371 - Gestión Comercial (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN371 - Gestión Comercial (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
     <tr>
       <td>1MN444 - Marketing Internacional en China y Asia-Pacífico (2023-I).pdf</td>
       <td>30.0</td>
       <td>1.0</td>
       <td>Marketing y Negocios</td>
-      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\CIUP_RA_works\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN444 - Marketing Internacional en China y Asia-Pacífico (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="C:\Users\Matias Villalba\Documents\GitHub\VRI_UP_Networks\data\syllabus\9_Marketing_y_Negocios_Internacionales\1MN444 - Marketing Internacional en China y Asia-Pacífico (2023-I).pdf" target="_blank">pdf</a></td>
+      <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks/data/syllabus/9_Marketing_y_Negocios_Internacionales/1MN444 - Marketing Internacional en China y Asia-Pacífico (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
   </tbody>
 </table></div></div>
@@ -2084,7 +2155,7 @@ Course 130642: 14 sections
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome</p>
+        <p class="prev-next-title">Introduction</p>
       </div>
     </a>
 </div>
@@ -2103,16 +2174,16 @@ Course 130642: 14 sections
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">1.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabi-text-analysis">1.2. Syllabi text Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-extraction">1.2.1. Text Extraction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristic-identification">1.2.2. Key characteristic identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabi-text-analysis">Syllabi text Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-extraction">Text Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristic-identification">Key characteristic identification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulated-pdf-course-data-extraction">1.3. Tabulated PDF course data extraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidating-final-dataframe">1.4. Consolidating final Dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-aditional-information">1.4.1. Merging aditional information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-potential-courses">1.4.2. Filtering potential courses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulated-pdf-course-data-extraction">Tabulated PDF course data extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consolidating-final-dataframe">Consolidating final Dataframe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-aditional-information">Merging aditional information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-potential-courses">Filtering potential courses</a></li>
 </ul>
 </li>
 </ul>
