@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 options:  # The options key will be applied to all chapters, but not sub-sections
-  numbered: True
+  numbered: 1
 chapters:
 - file: code/text_extraction_and_classification
