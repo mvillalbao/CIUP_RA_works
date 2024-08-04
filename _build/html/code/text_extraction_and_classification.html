@@ -514,11 +514,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\8_Ingeniería\\170337 - Procesos de Suministros (2023-I).pdf&#39;,
- &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\4_Derecho\\180092 - Derecho para los Negocios Internacionales (2023-I).pdf&#39;,
- &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\1_Administración\\(1) 142085 - Gestión de la Sostenibilidad Social y Ambiental en las Empresas (2023-I).pdf&#39;,
- &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\9_Marketing_y_Negocios_Internacionales\\1MN388 - Marketing de Contenidos (2023-I).pdf&#39;,
- &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\3_Contabilidad\\163059 - Auditoría (2023-I).pdf&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\7_Humanidades\\(1) 120070 - Historia Económica y Empresarial (2023-I).pdf&#39;,
+ &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\8_Ingeniería\\170344 - Metodologías Ágiles (2023-I).pdf&#39;,
+ &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\7_Humanidades\\126177 - Arte del Perú Contemporáneo (2023-I).pdf&#39;,
+ &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\6_Finanzas\\(1) 1F0060 - Investigación Financiera (2023-I).pdf&#39;,
+ &#39;C:\\Users\\Matias Villalba\\Documents\\GitHub\\VRI_UP_Networks\\data\\syllabus\\3_Contabilidad\\160139 - Aspectos Tributarios para la Empresa (2023-I).pdf&#39;]
 </pre></div>
 </div>
 </div>
@@ -2432,13 +2432,13 @@ Course 130642: 14 sections
 <span class="n">dataframes</span> <span class="o">=</span> <span class="p">[</span><span class="n">selection_2</span><span class="p">,</span> <span class="n">selection_3</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">titles</span><span class="p">,</span> <span class="n">dataframes</span><span class="p">):</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;h3 style=&quot;text-align:center;&quot;&gt;&lt;b&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/b&gt;&lt;/h3&gt;&#39;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;h3 style=&quot;text-align:center; background-color: #121212;&quot;&gt;&lt;b&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/b&gt;&lt;/h3&gt;&#39;</span><span class="p">))</span>
     <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="s1">&#39;sections&#39;</span><span class="p">,</span> <span class="s1">&#39;faculty&#39;</span><span class="p">,</span> <span class="s1">&#39;local_link&#39;</span><span class="p">,</span> <span class="s1">&#39;online_link&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><h3 style="text-align:center;"><b>Group project & For freshmen & Large pool of students</b></h3></div><div class="output text_html"><table border="1" class="dataframe">
+<div class="output text_html"><h3 style="text-align:center; background-color: #121212;"><b>Group project & For freshmen & Large pool of students</b></h3></div><div class="output text_html"><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>filename</th>
@@ -2467,7 +2467,7 @@ Course 130642: 14 sections
       <td><a href="https://mvillalbao.github.io/assets/pdf/VRI_UP_Networks_data/data/syllabus/3_Contabilidad/160092 - Fundamentos de Contabilidad (2023-I).pdf" target="_blank">pdf</a></td>
     </tr>
   </tbody>
-</table></div><div class="output text_html"><h3 style="text-align:center;"><b>Group project & From Economics Department & Large pool of students</b></h3></div><div class="output text_html"><table border="1" class="dataframe">
+</table></div><div class="output text_html"><h3 style="text-align:center; background-color: #121212;"><b>Group project & From Economics Department & Large pool of students</b></h3></div><div class="output text_html"><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>filename</th>
