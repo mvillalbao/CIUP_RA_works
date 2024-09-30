@@ -7,3 +7,4 @@ options:  # The options key will be applied to all chapters, but not sub-section
   numbered: 1
 chapters:
 - file: code/text_extraction_and_classification
+- file: administrative_data/05-CODE/python_code
